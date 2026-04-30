@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal Nest Hotel</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    body,
+    p,
+    a {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1 class="logo"><strong>Royal<span class="nest-text">Nest</span></strong></h1>
+      <nav>
+        <ul>
+          <li><a href="#"><strong>Home</strong></a></li>
+          <li><a href="#rooms"><strong>Rooms</strong></a></li>
+          <li><a href="#About"><strong>About</strong></a></li>
+          <li><a href="#contact"><strong>Book Now</strong></a></li>
+          <li><a href="#Facalities"><strong>Facilities</strong></a></li>
+          <li> <button id="authBtn" class="signin-btn">Sign In</button> </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>WELCOME TO RoyalNest</h2>
+
+      <div class="booking">
+        <input type="date" id="dateInput" title="Select check-in date" required>
+        <input type="number" id="guestsInput" placeholder="Guests" min="1" required>
+        <select id="roomType" title="Select room type">
+          <option value="">Select Room</option>
+          <option value="Standard Room">Standard Room - ₹1500</option>
+          <option value="Deluxe Room">Deluxe Room - ₹2500</option>
+          <option value="Luxury Suite">Luxury Suite - ₹5000</option>
+        </select>
+        <div class="location-box">
+          <input type="text" id="locationInput" placeholder="Location" required>
+          <div class="location-dropdown" id="locationDropdown">
+            <input type="text" id="locationSearch" placeholder="Search...">
+            <div>Bhagalpur</div>
+            <div>Patna</div>
+            <div>Delhi</div>
+            <div>Mumbai</div>
+            <div>Kolkata</div>
+          </div>
+        </div>
+
+        <button type="button" id="searchBtn">Search Rooms</button>
+      </div>
+
+    </div>
+
+
+    
+  </section>
+   <section class="user-profile">
+  <h2>User Profile</h2>
+  <div class="profile-card">
+    <p><strong>Name:</strong> <span id="profileName"></span></p>
+    <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+    <p><strong>Total Bookings:</strong> <span id="profileBookings"></span></p>
+    <p><strong>Total Spent:</strong> ₹<span id="profileSpent"></span></p>
+  </div>
+</section>
+  <!-- Rooms Containar -->
+
+  <section class="rooms" id="rooms">
+    <h2><strong><i>Popular Rooms</i></strong> </h2>
+    <div class="room-cards">
+      <div class="room">
+        <img
+          src="https://th.bing.com/th/id/R.7949918e964ecf7fb2a92ffec04c113d?rik=WKUEfx3mT9k3BQ&riu=http%3a%2f%2fcache.marriott.com%2fmarriottassets%2fmarriott%2fLASJW%2flasjw-suite-0084-hor-clsc.jpg%3finterpolation%3dprogressive-bilinear%26&ehk=oDRvnHGdTO5SUJmvUoxsmYCSFG%2beW%2fXXnw35tcAIjRw%3d&risl=&pid=ImgRaw&r=0"
+          alt="hotel image">
+        <h3>Standard Room</h3>
+        <p>₹1500/night</p>
+      </div>
+      <div class="room">
+        <img
+          src="https://th.bing.com/th/id/R.7949918e964ecf7fb2a92ffec04c113d?rik=WKUEfx3mT9k3BQ&riu=http%3a%2f%2fcache.marriott.com%2fmarriottassets%2fmarriott%2fLASJW%2flasjw-suite-0084-hor-clsc.jpg%3finterpolation%3dprogressive-bilinear%26&ehk=oDRvnHGdTO5SUJmvUoxsmYCSFG%2beW%2fXXnw35tcAIjRw%3d&risl=&pid=ImgRaw&r=0"
+          alt="hotel image">
+        <h3>Deluxe Room</h3>
+        <p>₹2500/night</p>
+      </div>
+      <div class="room">
+        <img
+          src="https://photos.mandarinoriental.com/is/image/MandarinOriental/dmo-The-worlds-most-romantic-hotel-suites-dubai-royal-penthouse-bedroom"
+          alt="hotel image">
+        <h3>Luxury Suite</h3>
+        <p>₹5000/night</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Facilities -->
+  <section class="facilities" id="Facalities">
+
+    <h2><strong><i>FACILITIES</i></strong></h2>
+    <div class="facilitie-cards">
+
+      <div class="facilitie">
+        <img src="https://th.bing.com/th/id/OIP.Eh_cXnqgXGe45cJLq0iaxAHaGm?r=0&o=7rm=3&rs=1&pid=ImgDetMain"
+          alt="conference" />
+        <h3>Conference Room</h3>
+        <p>Spacious conference halls for business meetings and events.</p>
+      </div>
+
+      <div class="facilitie">
+        <img src="https://th.bing.com/th/id/OIP.rI56h96boMyYF7mGiF9vkAHaFj?r=0&rs=1&pid=ImgDetMain" alt="restaurant" />
+        <h3>Restaurant</h3>
+        <p>Delicious multi-cuisine meals served with elegance.</p>
+      </div>
+
+      <div class="facilitie">
+        <img src="https://5.imimg.com/data5/AV/GB/QQ/SELLER-13597443/kids-play-zone-entertainment-service-500x500.png"
+          alt="kids" />
+        <h3>Kids Play Area</h3>
+        <p>Safe and fun environment for your kids to enjoy.</p>
+      </div>
+
+      <div class="facilitie">
+        <img
+          src="https://thumbs.dreamstime.com/z/beautiful-luxury-wedding-hall-delhi-india-beautiful-wedding-hall-photo-taken-me-delhi-india-111771013.jpg?w=400"
+          alt="wedding" />
+        <h3>Wedding Hall</h3>
+        <p>Make your special day unforgettable with our premium venues.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- Feedback section -->
+
+  <section class="testimonials" id="testimonials">
+    <h2><strong><i>What Our Guests Say</i></strong></h2>
+    <div class="testimonial-cards">
+      <div class="testimonial">
+        <p>"Amazing stay, very clean rooms"</p>
+        <h4>- Adarsh Kumar</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Best hotel experience"</p>
+        <h4>- Sakshi Singh</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery section -->
+  <section class="gallery" id="gallery">
+    <h2><strong><i>Gallery</i></strong></h2>
+    <div class="gallery-images">
+      <img src="https://as2.ftcdn.net/v2/jpg/04/20/23/29/1000_F_420232933_XpBbddvkxT5KhtcLy8qRcPe5A2Xx7r8V.jpg"
+        alt="room">
+      <img src="https://as2.ftcdn.net/v2/jpg/04/20/23/29/1000_F_420232933_XpBbddvkxT5KhtcLy8qRcPe5A2Xx7r8V.jpg"
+        alt="pool">
+      <img src="https://as2.ftcdn.net/v2/jpg/04/20/23/29/1000_F_420232933_XpBbddvkxT5KhtcLy8qRcPe5A2Xx7r8V.jpg"
+        alt="lobby">
+      <img src="https://as2.ftcdn.net/v2/jpg/04/20/23/29/1000_F_420232933_XpBbddvkxT5KhtcLy8qRcPe5A2Xx7r8V.jpg"
+        alt="food">
+    </div>
+  </section>
+  <!-- confirmation-section -->
+  <section class="confirmation-section">
+    <h2>Latest Booking Confirmation</h2>
+    <div id="confirmationCard"></div>
+  </section>
+  <!-- My Booking -->
+  <section class="my-bookings">
+    <h2>My Bookings</h2>
+    <div id="bookingList"></div>
+  </section>
+
+  <!-- Contact Section -->
+
+  <section class="contact" id="contact">
+    <form onsubmit="event.preventDefault(); alert('Message sent!');">
+      <h2>Contact Us</h2>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+
+
+
+  <!-- About -->
+  <section class="about" id="About">
+    <h2>About Us</h2>
+    <p>Welcome to Royal Nest — a luxurious retreat offering comfort, elegance, and a touch of tradition. Our goal is to
+      make every guest’s stay unforgettable with exceptional hospitality and modern amenities. Lorem, ipsum dolor sit
+      amet consectetur adipisicing elit. Mollitia, explicabo harum. Similique ex soluta perferendis qui veniam.
+      Quibusdam beatae labore harum minima itaque nobis, quam corporis. Magni quibusdam, maxime quisquam nobis sapiente
+      vitae nostrum quam distinctio omnis, mollitia soluta labore asperiores natus error nemo exercitationem corrupti
+      animi? Modi sint tempore deserunt eaque possimus consectetur quisquam sapiente veniam odio est. Quia esse
+      necessitatibus fugit corrupti quam a voluptas cumque illo fugiat tempore dolore, laborum aliquid assumenda
+      consequuntur doloribus incidunt provident! Doloribus cupiditate id molestiae consequuntur minima quisquam rerum
+      quos quia, ipsa dolorem, sequi asperiores nobis eaque nam laudantium impedit dignissimos quaerat?</p>
+  </section>
+
+
+
+<!-- admin-dashboard -->
+
+
+<section class="admin-dashboard">
+  <h2>Admin Dashboard</h2>
+  <div class="admin-stats">
+    <div class="stat-card">
+      <h3>Total Users</h3>
+      <p id="totalUsers">0</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Total Bookings</h3>
+      <p id="totalBookings">0</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Total Revenue</h3>
+      <p id="totalRevenue">₹0</p>
+    </div>
+  </div>
+</section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Royal Nest Hotel | Follow us:
+      <a href="https://www.instagram.com/adarsh___kumar.7/">Instagram</a> |
+      <a href="https://www.facebook.com/share/15un7EYeQi/">Facebook</a> |
+      <a href="https://www.youtube.com/@AdarshKumar-vq5lr">YouTube</a>
+    </p>
+  </footer>
+
+
+  <!-- Booking-success Block -->
+  <script>
+    const locInput = document.getElementById("locationInput");
+    const dropdown = document.getElementById("locationDropdown");
+    const search = document.getElementById("locationSearch");
+    const searchBtn = document.getElementById("searchBtn");
+
+    const dateInput = document.getElementById("dateInput");
+    const guestsInput = document.getElementById("guestsInput");
+    const roomTypeInput = document.getElementById("roomType");
+    searchBtn.addEventListener("click", () => {
+      const date = dateInput.value;
+      const guests = guestsInput.value;
+      const location = locInput.value;
+
+      const roomType = roomTypeInput.value;
+      let roomPrice = 0;
+
+      if (roomType === "Standard Room") roomPrice = 1500;
+      else if (roomType === "Deluxe Room") roomPrice = 2500;
+      else if (roomType === "Luxury Suite") roomPrice = 5000;
+
+      const totalPrice = roomPrice * Number(guests);
+
+      if (!date || !guests || !location || !roomType) {
+        alert("Fill all fields");
+        return;
+      }
+
+      const currentUserData = JSON.parse(localStorage.getItem("loggedInUser"));
+
+      const booking = {
+        date,
+        guests,
+        location,
+        roomType,
+        totalPrice,
+        user: currentUserData ? currentUserData.email : "guest"
+      };
+
+      let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+      bookings.push(booking);
+
+      localStorage.setItem("bookings", JSON.stringify(bookings));
+
+      alert(`Booking successful! Total Price: ₹${totalPrice}`);
+
+      displayBookings();
+      updateAdminDashboard();
+      updateUserProfile();
+      const savedBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+      if (savedBookings.length > 0) {
+        showConfirmation(savedBookings[savedBookings.length - 1]);
+      }
+
+    });
+
+
+    locInput.addEventListener("focus", () => dropdown.style.display = "block");
+    locInput.addEventListener("click", () => dropdown.style.display = "block");
+
+    dropdown.querySelectorAll(":scope > div").forEach(item => {
+      item.addEventListener("click", () => {
+        locInput.value = item.innerText;
+        dropdown.style.display = "none";
+      });
+    });
+
+    search.addEventListener("input", () => {
+      const q = search.value.toLowerCase();
+      dropdown.querySelectorAll(":scope > div").forEach(d => {
+        d.style.display = d.innerText.toLowerCase().includes(q) ? "block" : "none";
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".location-box")) {
+        dropdown.style.display = "none";
+      }
+    });
+  </script>
+
+
+
+
+
+  <!-- Auth Button Script -->
+  <script>
+    const authBtn = document.getElementById("authBtn");
+    const userInfo = localStorage.getItem("loggedInUser");
+    let currentUser = null;
+    if (userInfo) {
+      try {
+        currentUser = JSON.parse(userInfo);
+      } catch (e) {
+        currentUser = null;
+      }
+    }
+
+    if (currentUser) {
+      authBtn.textContent = "Logout";
+      authBtn.classList.add("logout");
+
+      const nameTag = document.createElement("p");
+      nameTag.textContent = currentUser.name || currentUser.email;
+      nameTag.style.color = "yellow";
+      nameTag.style.fontSize = "10px";
+      nameTag.style.marginTop = "4px";
+      authBtn.insertAdjacentElement("afterend", nameTag);
+
+      authBtn.addEventListener("click", () => {
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "index.html";
+      });
+    } else {
+      authBtn.addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    }
+    function displayBookings() {
+      const bookingList = document.getElementById("bookingList");
+      bookingList.innerHTML = "";
+
+      const currentUserData = JSON.parse(localStorage.getItem("loggedInUser"));
+      const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+      const userBookings = bookings.filter(
+        booking => booking.user === (currentUserData ? currentUserData.email : "guest")
+      );
+
+      userBookings.forEach(booking => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+  <p>
+    Date: ${booking.date} |
+    Guests: ${booking.guests} |
+    Location: ${booking.location} |
+    Room: ${booking.roomType} |
+    Price: ₹${booking.totalPrice}
+    <button onclick="deleteBooking('${booking.date}','${booking.location}')">Delete</button>
+  </p>
+`;
+        bookingList.appendChild(div);
+      });
+    }
+
+    displayBookings();
+    updateAdminDashboard();
+    updateUserProfile();
+    const savedBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    if (savedBookings.length > 0) {
+      showConfirmation(savedBookings[savedBookings.length - 1]);
+    } else {
+      document.getElementById("confirmationCard").innerHTML = "";
+    }
+    function deleteBooking(date, location) {
+      let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+      const currentUserData = JSON.parse(localStorage.getItem("loggedInUser"));
+
+      bookings = bookings.filter(
+        booking =>
+          !(
+            booking.date === date &&
+            booking.location === location &&
+            booking.user === (currentUserData ? currentUserData.email : "guest")
+          )
+      );
+
+      localStorage.setItem("bookings", JSON.stringify(bookings));
+
+      displayBookings();
+      updateAdminDashboard();
+      updateUserProfile();
+      if (bookings.length > 0) {
+        showConfirmation(bookings[bookings.length - 1]);
+      } else {
+        document.getElementById("confirmationCard").innerHTML = "";
+      }
+
+    }
+    function showConfirmation(booking) {
+      const confirmationCard = document.getElementById("confirmationCard");
+
+      confirmationCard.innerHTML = `
+    <div class="confirm-card">
+      <h3>Booking Confirmed!</h3>
+      <p>Date: ${booking.date}</p>
+      <p>Guests: ${booking.guests}</p>
+      <p>Location: ${booking.location}</p>
+      <p>Room: ${booking.roomType}</p>
+      <p>Total Price: ₹${booking.totalPrice}</p>
+    </div>
+  `;
+    }
+    function updateAdminDashboard() {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+  const totalRevenue = bookings.reduce(
+    (sum, booking) => sum + Number(booking.totalPrice),
+    0
+  );
+
+  document.getElementById("totalUsers").textContent = users.length;
+  document.getElementById("totalBookings").textContent = bookings.length;
+  document.getElementById("totalRevenue").textContent = `₹${totalRevenue}`;
+}
+function updateUserProfile() {
+  const currentUserData = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  if (!currentUserData) return;
+
+  const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+  const userBookings = bookings.filter(
+    booking => booking.user === currentUserData.email
+  );
+
+  const totalSpent = userBookings.reduce(
+    (sum, booking) => sum + Number(booking.totalPrice),
+    0
+  );
+
+  document.getElementById("profileName").textContent = currentUserData.name || "Guest";
+  document.getElementById("profileEmail").textContent = currentUserData.email;
+  document.getElementById("profileBookings").textContent = userBookings.length;
+  document.getElementById("profileSpent").textContent = totalSpent;
+}
+  </script>
+
+</body>
+
+</html>
