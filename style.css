@@ -519,24 +519,36 @@ button:hover {
   .container {
     flex-direction: column;
     text-align: center;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 2em;
+    margin-bottom: 10px;
   }
 
   nav ul {
     flex-direction: column;
-    margin-top: 10px;
+
     align-items: center;
+    width: 100%;
+    padding: 0;
   }
 
   nav ul li {
-    margin: 10px 0;
+    margin: 8px 0;
   }
 
   .hero {
-    padding: 60px 10px;
+    padding: 60px 15px;
   }
 
   .hero-content h2 {
     font-size: 1.8em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
   }
 
   .booking {
@@ -545,25 +557,88 @@ button:hover {
     align-items: center;
   }
 
+  .booking input,
+  .booking select,
+  .booking button {
+    width: 90%;
+    max-width: 350px;
+    margin: 8px 0;
+  }
+
   .room-cards,
-  .facilitie-cards {
+  .facilitie-cards,
+  .testimonial-cards,
+  .gallery-images,
+  .admin-stats {
     flex-direction: column;
     align-items: center;
   }
 
   .room,
-  .facilitie {
+  .facilitie,
+  .testimonial,
+  .stat-card,
+  .profile-card,
+  .confirm-card {
     width: 90%;
+    max-width: 350px;
+  }
+
+  #bookingList div {
+    width: 95%;
+  }
+
+  .contact form {
+    padding: 0;
+    margin: 20px 0;
   }
 
   .contact input,
-  .contact textarea {
+  .contact textarea,
+  .contact button {
+    width: 95%;
+    max-width: 350px;
+  }
+
+  .gallery-images img {
+    width: 90%;
+    height: auto;
+  }
+
+  footer {
+    font-size: 0.9em;
+    padding: 15px;
+  }
+}
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  color: gold;
+  cursor: pointer;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    text-align: right;
     width: 100%;
   }
 
-  .about,
-  .contact,
-  .rooms.facilities {
-    padding: 20px 10px;
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #001f3f;
+    padding: 15px 0;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 12px 0;
   }
 }

@@ -10,6 +10,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   }
 
   let users = [];
+
   try {
     users = JSON.parse(localStorage.getItem("users")) || [];
   } catch {
@@ -30,3 +31,10 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     alert("Invalid email or password!");
   }
 });
+
+function toggleMenu() {
+  const navLinks = document.getElementById("nav-links");
+  if (navLinks) {
+    navLinks.classList.toggle("active");
+  }
+}

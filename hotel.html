@@ -34,7 +34,8 @@
     <div class="container">
       <h1 class="logo"><strong>Royal<span class="nest-text">Nest</span></strong></h1>
       <nav>
-        <ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
           <li><a href="#"><strong>Home</strong></a></li>
           <li><a href="#rooms"><strong>Rooms</strong></a></li>
           <li><a href="#About"><strong>About</strong></a></li>
@@ -499,7 +500,11 @@ function updateUserProfile() {
   document.getElementById("profileSpent").textContent = totalSpent;
 }
   </script>
-
+<script>
+function toggleMenu() {
+  document.getElementById("nav-links").classList.toggle("active");
+}
+</script>
 </body>
 
 </html>
