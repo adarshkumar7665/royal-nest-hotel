@@ -52,3 +52,13 @@ button:hover {
 p {
   margin-top: 15px;
 }
+.register-link{
+  color:#d4af37;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.register-link:hover{
+  color: #f0c908;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
