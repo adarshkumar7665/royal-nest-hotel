@@ -11,7 +11,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap"
     rel="stylesheet">
-
   <style>
     h1,
     h2,
@@ -39,7 +38,7 @@
           <li><a href="#"><strong>Home</strong></a></li>
           <li><a href="#rooms"><strong>Rooms</strong></a></li>
           <li><a href="#About"><strong>About</strong></a></li>
-          <li><a href="#contact"><strong>Book Now</strong></a></li>
+          <li><a href="#booking-form"><strong>Book Now</strong></a></li>
           <li><a href="#Facalities"><strong>Facilities</strong></a></li>
           <li> <button id="authBtn" class="signin-btn">Sign In</button> </li>
         </ul>
@@ -52,7 +51,18 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h2>WELCOME TO RoyalNest</h2>
+      <h2>Experience Luxury Like Never Before</h2>
+      <p class="hero-subtitle">Premium comfort, unforgettable stays, and world-class hospitality.</p>
+
+      <div class="hero-buttons">
+        <a href="#rooms" class="hero-btn primary-btn">Explore Rooms</a>
+        <a href="#booking-form" class="hero-btn secondary-btn">Book Now</a>
+      </div>
+
+
+      <div class="scroll-indicator">
+        <span>⌄</span>
+      </div>
 
       <div class="booking">
         <input type="date" id="dateInput" title="Select check-in date" required>
@@ -76,22 +86,50 @@
         </div>
 
         <button type="button" id="searchBtn">Search Rooms</button>
+
       </div>
 
     </div>
-
-
-    
   </section>
-   <section class="user-profile">
-  <h2>User Profile</h2>
-  <div class="profile-card">
-    <p><strong>Name:</strong> <span id="profileName"></span></p>
-    <p><strong>Email:</strong> <span id="profileEmail"></span></p>
-    <p><strong>Total Bookings:</strong> <span id="profileBookings"></span></p>
-    <p><strong>Total Spent:</strong> ₹<span id="profileSpent"></span></p>
-  </div>
-</section>
+  <section class="real-booking" id="booking-form">
+    <h2>Book Your Stay</h2>
+    <form id="bookingForm">
+
+      <input type="text" id="fullName" placeholder="Full Name" required>
+
+      <input type="email" id="bookingEmail" placeholder="Email Address" required>
+
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+
+      <label for="checkIn">Check-in Date</label>
+      <input type="date" id="checkIn" required>
+
+      <label for="checkOut">Check-out Date</label>
+      <input type="date" id="checkOut" required>
+
+      <input type="number" id="bookingGuests" placeholder="Guests" min="1" required>
+
+      <label for="bookingRoomType">Room Type</label>
+      <select id="bookingRoomType" required>
+        <option value="">Select Room Type</option>
+        <option value="Standard Room">Standard Room - ₹1500</option>
+        <option value="Deluxe Room">Deluxe Room - ₹2500</option>
+        <option value="Luxury Suite">Luxury Suite - ₹5000</option>
+      </select>
+
+      <button type="submit">Confirm Booking</button>
+
+    </form>
+  </section>
+  <section class="user-profile">
+    <h2>User Profile</h2>
+    <div class="profile-card">
+      <p><strong>Name:</strong> <span id="profileName"></span></p>
+      <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+      <p><strong>Total Bookings:</strong> <span id="profileBookings"></span></p>
+      <p><strong>Total Spent:</strong> ₹<span id="profileSpent"></span></p>
+    </div>
+  </section>
   <!-- Rooms Containar -->
 
   <section class="rooms" id="rooms">
@@ -101,22 +139,28 @@
         <img
           src="https://th.bing.com/th/id/R.7949918e964ecf7fb2a92ffec04c113d?rik=WKUEfx3mT9k3BQ&riu=http%3a%2f%2fcache.marriott.com%2fmarriottassets%2fmarriott%2fLASJW%2flasjw-suite-0084-hor-clsc.jpg%3finterpolation%3dprogressive-bilinear%26&ehk=oDRvnHGdTO5SUJmvUoxsmYCSFG%2beW%2fXXnw35tcAIjRw%3d&risl=&pid=ImgRaw&r=0"
           alt="hotel image">
+        <div class="room-price">₹1500/night</div>
         <h3>Standard Room</h3>
-        <p>₹1500/night</p>
+        <p>Comfortable stay with premium essentials.</p>
+        <a href="#booking-form" class="room-btn">Book Now</a>
       </div>
       <div class="room">
         <img
           src="https://th.bing.com/th/id/R.7949918e964ecf7fb2a92ffec04c113d?rik=WKUEfx3mT9k3BQ&riu=http%3a%2f%2fcache.marriott.com%2fmarriottassets%2fmarriott%2fLASJW%2flasjw-suite-0084-hor-clsc.jpg%3finterpolation%3dprogressive-bilinear%26&ehk=oDRvnHGdTO5SUJmvUoxsmYCSFG%2beW%2fXXnw35tcAIjRw%3d&risl=&pid=ImgRaw&r=0"
           alt="hotel image">
-        <h3>Deluxe Room</h3>
-        <p>₹2500/night</p>
+        <div class="room-price">₹5000/night</div>
+        <h3>Luxury Suite</h3>
+        <p>Ultimate elegance with world-class experience.</p>
+        <a href="#booking-form" class="room-btn">Book Now</a>
       </div>
       <div class="room">
         <img
           src="https://photos.mandarinoriental.com/is/image/MandarinOriental/dmo-The-worlds-most-romantic-hotel-suites-dubai-royal-penthouse-bedroom"
           alt="hotel image">
+        <div class="room-price">₹5000/night</div>
         <h3>Luxury Suite</h3>
-        <p>₹5000/night</p>
+        <p>Ultimate elegance with world-class experience.</p>
+        <a href="#booking-form" class="room-btn">Book Now</a>
       </div>
     </div>
   </section>
@@ -236,37 +280,74 @@
 
 
 
-<!-- admin-dashboard -->
+  <!-- admin-dashboard -->
 
 
-<section class="admin-dashboard">
-  <h2>Admin Dashboard</h2>
-  <div class="admin-stats">
-    <div class="stat-card">
-      <h3>Total Users</h3>
-      <p id="totalUsers">0</p>
+  <section class="admin-dashboard">
+    <h2>Admin Dashboard</h2>
+    <div class="admin-stats">
+      <div class="stat-card">
+        <h3>Total Users</h3>
+        <p id="totalUsers">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Total Bookings</h3>
+        <p id="totalBookings">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Total Revenue</h3>
+        <p id="totalRevenue">₹0</p>
+      </div>
     </div>
-
-    <div class="stat-card">
-      <h3>Total Bookings</h3>
-      <p id="totalBookings">0</p>
-    </div>
-
-    <div class="stat-card">
-      <h3>Total Revenue</h3>
-      <p id="totalRevenue">₹0</p>
-    </div>
-  </div>
-</section>
+  </section>
   <!-- Footer -->
   <footer>
-    <p>© 2025 Royal Nest Hotel | Follow us:
-      <a href="https://www.instagram.com/adarsh___kumar.7/">Instagram</a> |
-      <a href="https://www.facebook.com/share/15un7EYeQi/">Facebook</a> |
-      <a href="https://www.youtube.com/@AdarshKumar-vq5lr">YouTube</a>
-    </p>
-  </footer>
+    <div class="footer-container">
 
+      <div class="footer-section">
+        <h3>RoyalNest Hotel</h3>
+        <p>Luxury stays, premium comfort, and unforgettable experiences.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#booking-form">Book Now</a></li>
+          <li><a href="#Facalities">Facilities</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Email: kumaradars572@gmail.com</p>
+        <p>Phone: +91 6287507439</p>
+        <p>Location: Bhattichak, Surihari, Amarpur, Banka, Bihar, 813101</p>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+            title="Visit our Facebook page"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/adarsh___kumar.7" target="_blank" rel="noopener noreferrer"
+            title="Visit our Instagram profile"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Visit our Twitter profile"><i
+              class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/adarsh-kumar62" target="_blank" rel="noopener noreferrer"
+            title="Visit our LinkedIn profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 RoyalNest Hotel | All Rights Reserved</p>
+    </div>
+  </footer>
 
   <!-- Booking-success Block -->
   <script>
@@ -279,52 +360,20 @@
     const guestsInput = document.getElementById("guestsInput");
     const roomTypeInput = document.getElementById("roomType");
     searchBtn.addEventListener("click", () => {
-      const date = dateInput.value;
-      const guests = guestsInput.value;
-      const location = locInput.value;
-
       const roomType = roomTypeInput.value;
-      let roomPrice = 0;
 
-      if (roomType === "Standard Room") roomPrice = 1500;
-      else if (roomType === "Deluxe Room") roomPrice = 2500;
-      else if (roomType === "Luxury Suite") roomPrice = 5000;
-
-      const totalPrice = roomPrice * Number(guests);
-
-      if (!date || !guests || !location || !roomType) {
-        alert("Fill all fields");
+      if (!roomType) {
+        alert("Please select room type");
         return;
       }
 
-      const currentUserData = JSON.parse(localStorage.getItem("loggedInUser"));
+      alert(`${roomType} is available!`);
 
-      const booking = {
-        date,
-        guests,
-        location,
-        roomType,
-        totalPrice,
-        user: currentUserData ? currentUserData.email : "guest"
-      };
-
-      let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
-
-      bookings.push(booking);
-
-      localStorage.setItem("bookings", JSON.stringify(bookings));
-
-      alert(`Booking successful! Total Price: ₹${totalPrice}`);
-
-      displayBookings();
-      updateAdminDashboard();
-      updateUserProfile();
-      const savedBookings = JSON.parse(localStorage.getItem("bookings")) || [];
-      if (savedBookings.length > 0) {
-        showConfirmation(savedBookings[savedBookings.length - 1]);
-      }
-
+      document.getElementById("rooms").scrollIntoView({
+        behavior: "smooth"
+      });
     });
+
 
 
     locInput.addEventListener("focus", () => dropdown.style.display = "block");
@@ -374,7 +423,7 @@
 
       const nameTag = document.createElement("p");
       nameTag.textContent = currentUser.name || currentUser.email;
-      nameTag.style.color = "yellow";
+      nameTag.style.color = "#d4af37";
       nameTag.style.fontSize = "10px";
       nameTag.style.marginTop = "4px";
       authBtn.insertAdjacentElement("afterend", nameTag);
@@ -466,45 +515,76 @@
   `;
     }
     function updateAdminDashboard() {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
-  const totalRevenue = bookings.reduce(
-    (sum, booking) => sum + Number(booking.totalPrice),
-    0
-  );
+      const totalRevenue = bookings.reduce(
+        (sum, booking) => sum + Number(booking.totalPrice),
+        0
+      );
 
-  document.getElementById("totalUsers").textContent = users.length;
-  document.getElementById("totalBookings").textContent = bookings.length;
-  document.getElementById("totalRevenue").textContent = `₹${totalRevenue}`;
-}
-function updateUserProfile() {
-  const currentUserData = JSON.parse(localStorage.getItem("loggedInUser"));
+      document.getElementById("totalUsers").textContent = users.length;
+      document.getElementById("totalBookings").textContent = bookings.length;
+      document.getElementById("totalRevenue").textContent = `₹${totalRevenue}`;
+    }
+    function updateUserProfile() {
+      const currentUserData = JSON.parse(localStorage.getItem("loggedInUser"));
 
-  if (!currentUserData) return;
+      if (!currentUserData) return;
 
-  const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+      const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
-  const userBookings = bookings.filter(
-    booking => booking.user === currentUserData.email
-  );
+      const userBookings = bookings.filter(
+        booking => booking.user === currentUserData.email
+      );
 
-  const totalSpent = userBookings.reduce(
-    (sum, booking) => sum + Number(booking.totalPrice),
-    0
-  );
+      const totalSpent = userBookings.reduce(
+        (sum, booking) => sum + Number(booking.totalPrice),
+        0
+      );
 
-  document.getElementById("profileName").textContent = currentUserData.name || "Guest";
-  document.getElementById("profileEmail").textContent = currentUserData.email;
-  document.getElementById("profileBookings").textContent = userBookings.length;
-  document.getElementById("profileSpent").textContent = totalSpent;
-}
+      document.getElementById("profileName").textContent = currentUserData.name || "Guest";
+      document.getElementById("profileEmail").textContent = currentUserData.email;
+      document.getElementById("profileBookings").textContent = userBookings.length;
+      document.getElementById("profileSpent").textContent = totalSpent;
+    }
   </script>
-<script>
-function toggleMenu() {
-  document.getElementById("nav-links").classList.toggle("active");
-}
-</script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("active");
+    }
+  </script>
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const booking = {
+        name: document.getElementById("fullName").value,
+        email: document.getElementById("bookingEmail").value,
+        phone: document.getElementById("phone").value,
+        date: document.getElementById("checkIn").value,
+        checkOut: document.getElementById("checkOut").value,
+        guests: document.getElementById("bookingGuests").value,
+        roomType: document.getElementById("bookingRoomType").value,
+
+        location: document.getElementById("locationInput").value,
+
+        user: JSON.parse(localStorage.getItem("loggedInUser"))?.email || "guest",
+
+        totalPrice:
+          document.getElementById("bookingRoomType").value.includes("1500") ? 1500 :
+            document.getElementById("bookingRoomType").value.includes("2500") ? 2500 :
+              5000
+      };
+      let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+      bookings.push(booking);
+
+      localStorage.setItem("bookings", JSON.stringify(bookings));
+
+      alert("Booking Confirmed Successfully!");
+      this.reset();
+    });
+  </script>
 </body>
 
 </html>
