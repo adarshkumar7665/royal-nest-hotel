@@ -25,8 +25,10 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
   if (validUser) {
     localStorage.setItem("loggedInUser", JSON.stringify(validUser));
-    alert("Login successful!");
-    window.location.href = "hotel.html";
+    document.getElementById("loginPopup").classList.add("active");
+   setTimeout(() => {
+  window.location.href = "hotel.html";
+}, 1800);
   } else {
     alert("Invalid email or password!");
   }

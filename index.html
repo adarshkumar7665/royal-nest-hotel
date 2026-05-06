@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - Hotel Portal</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
-  
+
   <div class="container">
     <h2>Login</h2>
     <form id="loginForm">
@@ -21,5 +24,32 @@
   </div>
 
   <script src="login.js"></script>
+  <div class="booking-popup" id="loginPopup">
+  <div class="popup-content">
+
+    <div class="success-icon">
+      <i class="fas fa-check"></i>
+    </div>
+
+    <h2>Login Successful!</h2>
+
+    <p>Welcome back to RoyalNest Hotel.</p>
+
+    <button onclick="closeLoginPopup()">Continue</button>
+
+  </div>
+</div>
+
+<script>
+function closeLoginPopup() {
+  window.location.href = "hotel.html";
+}
+</script>
+<script>
+function closeLoginPopup() {
+  window.location.href = "hotel.html";
+}
+</script>
 </body>
+
 </html>

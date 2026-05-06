@@ -41,8 +41,10 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
   // Save to localStorage
   localStorage.setItem("users", JSON.stringify(users));
 
-  alert("Registration successful!");
+  document.getElementById("registerPopup").classList.add("active");
 
   // Redirect to login page
+ setTimeout(() => {
   window.location.href = "index.html";
+}, 1800);
 });
