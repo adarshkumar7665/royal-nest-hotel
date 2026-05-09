@@ -7,7 +7,10 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
 
   // Empty check
   if (!name || !email || !password) {
-    alert("Please fill all fields");
+   showToast(
+  "Please fill all fields",
+  "warning"
+);
     return;
   }
 
@@ -25,7 +28,7 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
   );
 
   if (userExists) {
-    alert("User already registered!");
+    showToast("User already registered!", "error");
     return;
   }
 
@@ -48,3 +51,24 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
   window.location.href = "index.html";
 }, 1800);
 });
+function showToast(message, type = "success") {
+
+  const toastBox =
+    document.getElementById("toastBox");
+
+  const toast =
+    document.createElement("div");
+
+  toast.classList.add("toast", type);
+
+  toast.innerHTML = `
+    <i class="fas fa-circle-check"></i>
+    ${message}
+  `;
+
+  toastBox.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}

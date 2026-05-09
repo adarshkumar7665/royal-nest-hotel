@@ -5,7 +5,10 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const password = document.getElementById("password").value.trim();
 
   if (!email || !password) {
-    alert("Please enter email and password");
+    showToast(
+  "Please enter email and password",
+  "warning"
+);
     return;
   }
 
@@ -30,7 +33,10 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   window.location.href = "hotel.html";
 }, 1800);
   } else {
-    alert("Invalid email or password!");
+    showToast(
+  "Invalid email or password!",
+  "error"
+);
   }
 });
 
@@ -39,4 +45,108 @@ function toggleMenu() {
   if (navLinks) {
     navLinks.classList.toggle("active");
   }
+}
+function openForgotPopup() {
+
+  document
+    .getElementById("forgotPopup")
+    .classList.add("active");
+
+}
+
+function resetPassword() {
+
+  const email =
+    document
+      .getElementById("forgotEmail")
+      .value
+      .trim();
+
+  const newPassword =
+    document
+      .getElementById("newPassword")
+      .value
+      .trim();
+
+  if (!email || !newPassword) {
+
+    showToast(
+  "Please fill all fields",
+  "warning"
+);
+
+    return;
+  }
+
+  let users =
+    JSON.parse(localStorage.getItem("users")) || [];
+
+  const userIndex =
+    users.findIndex(
+      u => u.email.toLowerCase() === email.toLowerCase()
+    );
+
+  if (userIndex === -1) {
+
+    showToast(
+  "Email not found!",
+  "error"
+);
+    return;
+  }
+
+  users[userIndex].password = newPassword;
+
+  localStorage.setItem(
+    "users",
+    JSON.stringify(users)
+  );
+
+  showToast(
+  "Password Updated Successfully!",
+  "success"
+);
+
+  document
+    .getElementById("forgotPopup")
+    .classList.remove("active");
+
+}
+function closeForgotPopup() {
+
+  document
+    .getElementById("forgotPopup")
+    .classList.remove("active");
+
+}
+function showToast(message, type = "success") {
+
+  const toastBox =
+    document.getElementById("toastBox");
+
+  const toast =
+    document.createElement("div");
+
+  toast.classList.add("toast", type);
+
+  let icon = "fa-circle-check";
+
+  if (type === "error") {
+    icon = "fa-circle-xmark";
+  }
+
+  if (type === "warning") {
+    icon = "fa-triangle-exclamation";
+  }
+
+  toast.innerHTML = `
+    <i class="fas ${icon}"></i>
+    ${message}
+  `;
+
+  toastBox.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
 }

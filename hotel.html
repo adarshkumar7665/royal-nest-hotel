@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+  <link
+rel="stylesheet"
+href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+/>
+  <link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Royal Nest Hotel</title>
@@ -28,21 +36,31 @@
 </head>
 
 <body>
-  
+
   <div id="progressBar"></div>
   <div id="loader">
 
-  <div class="loader-content">
+    <div class="loader-content">
 
-    <div class="loader-ring"></div>
+  <div class="luxury-ring"></div>
 
-    <h2>RoyalNest</h2>
+  <h1 class="loader-logo">
 
-    <p>Luxury Experience Awaits</p>
+    Royal<span>Nest</span>
 
-  </div>
+  </h1>
+
+  <p class="loader-text">
+
+    Luxury Experience Awaits
+
+  </p>
+
+  <div class="loader-line"></div>
 
 </div>
+
+  </div>
   <!-- Header Section -->
   <header>
     <div class="container">
@@ -51,10 +69,10 @@
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul id="nav-links">
           <li><a href="#"><strong>Home</strong></a></li>
-          <li><a href="#rooms"><strong>Rooms</strong></a></li>
-          <li><a href="#about"><strong>About</strong></a></li>
           <li><a href="#booking-form"><strong>Book Now</strong></a></li>
+          <li><a href="#rooms"><strong>Rooms</strong></a></li>
           <li><a href="#facilities"><strong>Facilities</strong></a></li>
+           <li><a href="#about"><strong>About</strong></a></li>
           <li> <button id="authBtn" class="signin-btn">Sign In</button> </li>
         </ul>
       </nav>
@@ -68,17 +86,6 @@
     <div class="hero-content">
       <h2>Experience Luxury Like Never Before</h2>
       <p class="hero-subtitle">Premium comfort, unforgettable stays, and world-class hospitality.</p>
-
-      <div class="hero-buttons">
-        <a href="#rooms" class="hero-btn primary-btn">Explore Rooms</a>
-        <a href="#booking-form" class="hero-btn secondary-btn">Book Now</a>
-      </div>
-
-
-      <div class="scroll-indicator">
-        <span>⌄</span>
-      </div>
-
       <div class="booking">
         <input type="date" id="dateInput" title="Select check-in date" required>
         <input type="number" id="guestsInput" placeholder="Guests" min="1" required>
@@ -108,52 +115,101 @@
   </section>
   <section class="real-booking" id="booking-form">
     <h2>Book Your Stay</h2>
-<form id="bookingForm">
+    <form id="bookingForm">
 
-  <div class="form-group">
-    <label for="bookingName">Full Name</label>
-    <input type="text" id="bookingName" placeholder="Enter Full Name" required>
-  </div>
+      <div class="form-group">
+        <label for="bookingName">Full Name</label>
+        <input type="text" id="bookingName" placeholder="Enter Full Name" required>
+      </div>
 
-  <div class="form-group">
-    <label for="bookingEmail">Email Address</label>
-    <input type="email" id="bookingEmail" placeholder="Enter Email Address" required>
-  </div>
+      <div class="form-group">
+        <label for="bookingEmail">Email Address</label>
+        <input type="email" id="bookingEmail" placeholder="Enter Email Address" required>
+      </div>
 
-  <div class="form-group">
-    <label for="bookingPhone">Phone Number</label>
-    <input type="tel" id="bookingPhone" placeholder="Enter Phone Number" required>
-  </div>
+      <div class="form-group">
+        <label for="bookingPhone">Phone Number</label>
+        <input type="tel" id="bookingPhone" placeholder="Enter Phone Number" required>
+      </div>
 
-  <div class="form-group">
-    <label for="checkInDate">Check-in Date</label>
-    <input type="date" id="checkInDate" required>
-  </div>
+      <div class="form-group">
+        <label for="checkInDate">Check-in Date</label>
+        <input type="date" id="checkInDate" required>
+      </div>
 
-  <div class="form-group">
-    <label for="checkOutDate">Check-out Date</label>
-    <input type="date" id="checkOutDate" required>
-  </div>
+      <div class="form-group">
+        <label for="checkOutDate">Check-out Date</label>
+        <input type="date" id="checkOutDate" required>
+      </div>
 
-  <div class="form-group">
-    <label for="bookingGuests">Guests</label>
-    <input type="number" id="bookingGuests" placeholder="Guests" required>
-  </div>
+      <div class="form-group">
+        <label for="bookingGuests">Guests</label>
+        <input type="number" id="bookingGuests" placeholder="Guests" required>
+      </div>
+      <div class="form-group">
+        <label>Room Type</label>
 
-  <div class="form-group">
-    <label for="bookingRoomType">Room Type</label>
+        <div class="modern-select">
 
-    <select id="bookingRoomType" required>
-      <option value="">Select Room Type</option>
-      <option>Standard Room - ₹1500</option>
-      <option>Deluxe Room - ₹2500</option>
-      <option>Luxury Suite - ₹5000</option>
-    </select>
-  </div>
+          <div class="select-btn" id="roomSelectBtn">
+            Select Room Type
+            <span>▼</span>
+          </div>
 
-  <button type="submit">Confirm Booking</button>
+          <div class="select-options" id="roomOptions">
 
-</form>
+            <div data-value="Standard Room - ₹1500">
+              🛏 Standard Room - ₹1500
+            </div>
+
+            <div data-value="Deluxe Room - ₹2500">
+              🏨 Deluxe Room - ₹2500
+            </div>
+
+            <div data-value="Luxury Suite - ₹5000">
+              👑 Luxury Suite - ₹5000
+            </div>
+
+          </div>
+
+          <input type="hidden" id="bookingRoomType">
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Location</label>
+
+        <div class="modern-select">
+
+          <div class="select-btn" id="locationSelectBtn">
+            Select Location
+            <span>▼</span>
+          </div>
+
+          <div class="select-options" id="locationOptions">
+
+            <div data-value="Bhagalpur">Bhagalpur</div>
+
+            <div data-value="Patna">Patna</div>
+
+            <div data-value="Delhi">Delhi</div>
+
+            <div data-value="Mumbai">Mumbai</div>
+
+            <div data-value="Kolkata">Kolkata</div>
+
+          </div>
+
+          <input type="hidden" id="bookingLocation">
+
+        </div>
+      </div>
+      </div>
+
+      <button type="submit">Confirm Booking</button>
+
+    </form>
   </section>
   <section class="user-profile">
     <h2>User Profile</h2>
@@ -169,44 +225,54 @@
   <section class="rooms reveal" id="rooms">
     <h2><strong><i>Popular Rooms</i></strong> </h2>
     <div class="room-cards">
-      <div class="room stagger-item">
+      <div class="room stagger-item" data-location="Patna" data-room="Standard Room">
         <img
           src="https://th.bing.com/th/id/R.7949918e964ecf7fb2a92ffec04c113d?rik=WKUEfx3mT9k3BQ&riu=http%3a%2f%2fcache.marriott.com%2fmarriottassets%2fmarriott%2fLASJW%2flasjw-suite-0084-hor-clsc.jpg%3finterpolation%3dprogressive-bilinear%26&ehk=oDRvnHGdTO5SUJmvUoxsmYCSFG%2beW%2fXXnw35tcAIjRw%3d&risl=&pid=ImgRaw&r=0"
           alt="hotel image">
         <div class="room-price">₹1500/night</div>
         <h3>Standard Room</h3>
         <p>Comfortable stay with premium essentials.</p>
-       <a href="#booking-form"
-   class="room-btn"
-   onclick="selectRoom('Standard Room - ₹1500')">
-   Book Now
-</a>
+        <button class="room-btn" onclick="openRoomModal(
+'Standard Room',
+'Comfortable stay with premium essentials.',
+'₹1500/night',
+'https://th.bing.com/th/id/R.7949918e964ecf7fb2a92ffec04c113d?rik=WKUEfx3mT9k3BQ&riu=http%3a%2f%2fcache.marriott.com%2fmarriottassets%2fmarriott%2fLASJW%2flasjw-suite-0084-hor-clsc.jpg%3finterpolation%3dprogressive-bilinear%26&ehk=oDRvnHGdTO5SUJmvUoxsmYCSFG%2beW%2fXXnw35tcAIjRw%3d&risl=&pid=ImgRaw&r=0'
+)">
+          View Details
+        </button>
       </div>
-      <div class="room stagger-item">
+      <div class="room stagger-item" data-location="Delhi" data-room="Deluxe Room">
         <img
           src="https://photos.mandarinoriental.com/is/image/MandarinOriental/dmo-The-worlds-most-romantic-hotel-suites-dubai-royal-penthouse-bedroom"
           alt="hotel image">
         <h3>Deluxe Room</h3>
         <p>Comfortable stay with premium amenities.</p>
         <div class="room-price">₹2500/night</div>
-        <a href="#booking-form"
-   class="room-btn"
-   onclick="selectRoom('Deluxe Room - ₹2500')">
-   Book Now
-</a>
+        <button class="room-btn" onclick="openRoomModal(
+'Deluxe Room',
+'Comfortable stay with premium amenities.',
+'₹2500/night',
+'https://photos.mandarinoriental.com/is/image/MandarinOriental/dmo-The-worlds-most-romantic-hotel-suites-dubai-royal-penthouse-bedroom'
+)">
+          View Details
+        </button>
       </div>
-            <div class="room stagger-item">
-        <img
-          src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1200&auto=format&fit=crop"
+      <div class="room stagger-item" data-location="Mumbai" data-room="Luxury Suite">
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1200&auto=format&fit=crop"
           alt="hotel image">
         <div class="room-price">₹5000/night</div>
         <h3>Luxury Suite</h3>
         <p>Ultimate elegance with world-class experience.</p>
-        <a href="#booking-form"
-   class="room-btn"
-   onclick="selectRoom('Luxury Suite - ₹5000')">
-   Book Now
-</a>
+        <button class="room-btn" onclick="openRoomModal(
+'Luxury Suite',
+'Ultimate elegance with world-class experience.',
+'₹5000/night',
+'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1200&auto=format&fit=crop'
+)">
+
+          View Details
+
+        </button>
       </div>
     </div>
   </section>
@@ -264,102 +330,114 @@
 
   <!-- Feedback section -->
 
-<section class="testimonials reveal" id="testimonials">
+  <section class="testimonials reveal" id="testimonials">
 
-  <h2><strong><i>What Our Guests Say</i></strong></h2>
+    <h2><strong><i>What Our Guests Say</i></strong></h2>
 
-  <div class="testimonial-cards">
+    <div class="testimonial-cards">
 
-    <div class="testimonial stagger-item">
-      <div class="guest-profile">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="guest">
+      <div class="testimonial stagger-item">
+        <div class="guest-profile">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="guest">
 
-        <div>
-          <h4>Adarsh Kumar</h4>
-          <div class="stars">★★★★★</div>
+          <div>
+            <h4>Adarsh Kumar</h4>
+            <div class="stars">★★★★★</div>
+          </div>
         </div>
+
+        <p>
+          “Amazing hospitality and luxurious rooms. The experience felt truly premium.”
+        </p>
       </div>
 
-      <p>
-        “Amazing hospitality and luxurious rooms. The experience felt truly premium.”
-      </p>
-    </div>
+      <div class="testimonial stagger-item">
+        <div class="guest-profile">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="guest">
 
-    <div class="testimonial stagger-item">
-      <div class="guest-profile">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="guest">
-
-        <div>
-          <h4>Sakshi Singh</h4>
-          <div class="stars">★★★★★</div>
+          <div>
+            <h4>Sakshi Singh</h4>
+            <div class="stars">★★★★★</div>
+          </div>
         </div>
+
+        <p>
+          “One of the best hotel stays I've experienced. Beautiful ambience and service.”
+        </p>
       </div>
 
-      <p>
-        “One of the best hotel stays I've experienced. Beautiful ambience and service.”
-      </p>
-    </div>
+      <div class="testimonial stagger-item">
+        <div class="guest-profile">
+          <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="guest">
 
-    <div class="testimonial stagger-item">
-      <div class="guest-profile">
-        <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="guest">
-
-        <div>
-          <h4>Rahul Sharma</h4>
-          <div class="stars">★★★★★</div>
+          <div>
+            <h4>Rahul Sharma</h4>
+            <div class="stars">★★★★★</div>
+          </div>
         </div>
+
+        <p>
+          “Clean rooms, elegant design, and excellent customer support throughout the stay.”
+        </p>
       </div>
 
-      <p>
-        “Clean rooms, elegant design, and excellent customer support throughout the stay.”
-      </p>
+    </div>
+
+  </section>
+
+  <!-- Gallery section -->
+  <section class="gallery reveal" id="gallery">
+
+    <h2><strong><i>Gallery</i></strong></h2>
+
+  
+
+      <div class="swiper luxurySwiper">
+
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide">
+
+      <img
+      src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop"
+      alt="Luxury Room">
+
+    </div>
+
+    <div class="swiper-slide">
+
+      <img
+      src="https://5.imimg.com/data5/AV/GB/QQ/SELLER-13597443/kids-play-zone-entertainment-service-500x500.png"
+      alt="Pool">
+
+    </div>
+
+    <div class="swiper-slide">
+
+      <img
+      src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop"
+      alt="Lobby">
+
+    </div>
+
+    <div class="swiper-slide">
+
+      <img
+      src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop"
+      alt="Restaurant">
+
     </div>
 
   </div>
 
-</section>
+  <div class="swiper-button-next"></div>
 
- <!-- Gallery section -->
-<section class="gallery reveal" id="gallery">
+  <div class="swiper-button-prev"></div>
 
-  <h2><strong><i>Gallery</i></strong></h2>
-
-  <div class="gallery-images">
-
-  <div class="gallery-item stagger-item">
-    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop" alt="Luxury Room">
-    <div class="gallery-overlay">
-      <h3>Luxury Room</h3>
-    </div>
-  </div>
-
-  <div class="gallery-item stagger-item">
-    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop" alt="Swimming Pool">
-    <div class="gallery-overlay">
-      <h3>Infinity Pool</h3>
-    </div>
-  </div>
-
-  <div class="gallery-item stagger-item">
-    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop" alt="Lobby">
-    <div class="gallery-overlay">
-      <h3>Premium Lobby</h3>
-    </div>
-  </div>
-
-  <div class="gallery-item stagger-item">
-    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop" alt="Restaurant">
-    <div class="gallery-overlay">
-      <h3>Fine Dining</h3>
-    </div>
-  </div>
+  <div class="swiper-pagination"></div>
 
 </div>
-</section>
-  <!-- confirmation-section -->
-  <section class="confirmation-section reveal">
-    <h2>Latest Booking Confirmation</h2>
-    <div id="confirmationCard"></div>
+
   </section>
   <!-- My Booking -->
   <section class="my-bookings reveal">
@@ -368,97 +446,104 @@
   </section>
 
   <!-- Contact Section -->
-<section class="contact reveal" id="contact">
+  <section class="contact reveal" id="contact">
 
-  <h2>Contact Us</h2>
+    <h2>Contact Us</h2>
 
-  <div class="contact-container">
+    <div class="contact-container">
 
-    <div class="contact-info">
+      <div class="contact-info">
 
-      <div class="info-box">
-        <h3>📍 Address</h3>
-        <p>Mithapur, Patna, Bihar</p>
+        <div class="info-box">
+          <h3>📍 Address</h3>
+          <p>Mithapur, Patna, Bihar</p>
+        </div>
+
+        <div class="info-box">
+          <h3>📞 Phone</h3>
+          <p>+91 6287507439</p>
+        </div>
+
+        <div class="info-box">
+          <h3>✉ Email</h3>
+          <p>kumaradars572@gmail.com</p>
+        </div>
+
       </div>
 
-      <div class="info-box">
-        <h3>📞 Phone</h3>
-        <p>+91 6287507439</p>
-      </div>
+      <form id="contactForm">
 
-      <div class="info-box">
-        <h3>✉ Email</h3>
-        <p>kumaradars572@gmail.com</p>
-      </div>
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+
+      </form>
 
     </div>
 
-   <form id="contactForm">
-
-      <input type="text" placeholder="Your Name" required>
-
-      <input type="email" placeholder="Your Email" required>
-
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-
-    </form>
-
-  </div>
-
-</section>
+  </section>
 
 
 
 
   <!-- About -->
- <section class="about reveal" id="about">
+  <section class="about reveal" id="about">
 
-  <div class="about-container">
+    <div class="about-container">
 
-    <div class="about-image">
-      <img src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?q=80&w=1200&auto=format&fit=crop" alt="Hotel">
-    </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?q=80&w=1200&auto=format&fit=crop"
+          alt="Hotel">
+      </div>
 
-    <div class="about-content">
+      <div class="about-content">
 
-      <h2>About RoyalNest</h2>
+        <h2>About RoyalNest</h2>
 
-      <p>
-        RoyalNest Hotel delivers a premium hospitality experience with elegant rooms,
-        world-class dining, luxury facilities, and exceptional customer service.
-      </p>
+        <p>
+          RoyalNest Hotel delivers a premium hospitality experience with elegant rooms,
+          world-class dining, luxury facilities, and exceptional customer service.
+        </p>
 
-      <p>
-        Our mission is to create unforgettable stays where comfort meets sophistication.
-        Whether for business or leisure, every moment at RoyalNest feels special.
-      </p>
+        <p>
+          Our mission is to create unforgettable stays where comfort meets sophistication.
+          Whether for business or leisure, every moment at RoyalNest feels special.
+        </p>
 
-      <div class="about-stats">
+        <div class="about-stats">
 
-        <div class="stat-box">
-          <h3>250+</h3>
-          <span>Luxury Rooms</span>
-        </div>
+          <div class="stat-box">
+            <h3 class="counter" data-target="250">
+  0
+</h3>
+            <span>Luxury Rooms</span>
+          </div>
 
-        <div class="stat-box">
-          <h3>15K+</h3>
-          <span>Happy Guests</span>
-        </div>
+          <div class="stat-box">
+            <h3 class="counter" data-target="15000">
+  0
+</h3>
+            <span>Happy Guests</span>
+          </div>
 
-        <div class="stat-box">
-          <h3>5★</h3>
-          <span>Premium Service</span>
+          <div class="stat-box">
+            <h3 class="counter" data-target="5">
+  0
+</h3>
+            <span>Premium Service</span>
+          </div>
+
         </div>
 
       </div>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
 
@@ -515,8 +600,9 @@
         <div class="social-icons">
           <a href="https://www.facebook.com/share/18NwMCy8ts/" target="_blank" rel="noopener noreferrer"
             title="Visit our Facebook page"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="https://www.instagram.com/adarsh___kumar.7?igsh=amhmaWdwbzhrbjJt" target="_blank" rel="noopener noreferrer"
-            title="Visit our Instagram profile"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/adarsh___kumar.7?igsh=amhmaWdwbzhrbjJt" target="_blank"
+            rel="noopener noreferrer" title="Visit our Instagram profile"><i class="fab fa-instagram"
+              aria-hidden="true"></i></a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Visit our Twitter profile"><i
               class="fab fa-twitter" aria-hidden="true"></i></a>
           <a href="https://www.linkedin.com/in/adarsh-kumar62" target="_blank" rel="noopener noreferrer"
@@ -539,20 +625,67 @@
     const searchBtn = document.getElementById("searchBtn");
     const roomTypeInput = document.getElementById("roomType");
     searchBtn.addEventListener("click", () => {
-      const roomType = roomTypeInput.value;
 
-      if (!roomType) {
-        alert("Please select room type");
-        return;
+      const selectedRoom =
+        roomTypeInput.value
+          .toLowerCase();
+
+      const selectedLocation =
+        locInput.value
+          .toLowerCase();
+
+      const rooms =
+        document.querySelectorAll(".room");
+
+      let found = false;
+
+      rooms.forEach(room => {
+
+        const roomType =
+          room.dataset.room.toLowerCase();
+
+        const roomLocation =
+          room.dataset.location.toLowerCase();
+
+        const roomMatch =
+          !selectedRoom ||
+          roomType.includes(selectedRoom);
+
+        const locationMatch =
+          !selectedLocation ||
+          roomLocation.includes(selectedLocation);
+
+        if (roomMatch && locationMatch) {
+
+          room.style.display = "block";
+
+          found = true;
+
+        } else {
+
+          room.style.display = "none";
+
+        }
+
+      });
+
+      if (found) {
+
+        document.getElementById("rooms")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
+
+      } else {
+
+        showToast(
+          "No matching rooms found",
+          "warning"
+        );
+
       }
 
-   document.getElementById("bookingRoomType").value = roomType;
-
-document.getElementById("booking-form").scrollIntoView({
-  behavior: "smooth"
-});
     });
-
 
 
     locInput.addEventListener("focus", () => dropdown.style.display = "block");
@@ -630,14 +763,44 @@ document.getElementById("booking-form").scrollIntoView({
       userBookings.forEach(booking => {
         const div = document.createElement("div");
         div.innerHTML = `
-  <p>
-    Date: ${booking.date} |
-    Guests: ${booking.guests} |
-    Location: ${booking.location} |
-    Room: ${booking.roomType} |
-    Price: ₹${booking.totalPrice}
-    <button onclick="deleteBooking('${booking.date}','${booking.location}')">Delete</button>
-  </p>
+  <div class="booking-card">
+
+    <h3>${booking.roomType}</h3>
+
+    <p>
+      <strong>Date:</strong>
+      ${booking.date}
+    </p>
+
+    <p>
+      <strong>Guests:</strong>
+      ${booking.guests}
+    </p>
+
+    <p>
+      <strong>Location:</strong>
+      ${booking.location}
+    </p>
+
+    <p>
+      <strong>Total Price:</strong>
+      ₹${booking.totalPrice}
+    </p>
+
+    <span class="booking-status">
+      Confirmed
+    </span>
+
+    <br>
+
+    <button
+      class="delete-booking-btn"
+      onclick="deleteBooking('${booking.date}', '${booking.location}')"
+    >
+      Cancel Booking
+    </button>
+
+  </div>
 `;
         bookingList.appendChild(div);
       });
@@ -646,13 +809,6 @@ document.getElementById("booking-form").scrollIntoView({
     displayBookings();
     updateAdminDashboard();
     updateUserProfile();
-    const savedBookings = JSON.parse(localStorage.getItem("bookings")) || [];
-
-    if (savedBookings.length > 0) {
-      showConfirmation(savedBookings[savedBookings.length - 1]);
-    } else {
-      document.getElementById("confirmationCard").innerHTML = "";
-    }
     function deleteBooking(date, location) {
       let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
@@ -672,26 +828,6 @@ document.getElementById("booking-form").scrollIntoView({
       displayBookings();
       updateAdminDashboard();
       updateUserProfile();
-      if (bookings.length > 0) {
-        showConfirmation(bookings[bookings.length - 1]);
-      } else {
-        document.getElementById("confirmationCard").innerHTML = "";
-      }
-
-    }
-    function showConfirmation(booking) {
-      const confirmationCard = document.getElementById("confirmationCard");
-
-      confirmationCard.innerHTML = `
-    <div class="confirm-card">
-      <h3>Booking Confirmed!</h3>
-      <p>Date: ${booking.date}</p>
-      <p>Guests: ${booking.guests}</p>
-      <p>Location: ${booking.location}</p>
-      <p>Room: ${booking.roomType}</p>
-      <p>Total Price: ₹${booking.totalPrice}</p>
-    </div>
-  `;
     }
     function updateAdminDashboard() {
       const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -716,6 +852,24 @@ document.getElementById("booking-form").scrollIntoView({
       const userBookings = bookings.filter(
         booking => booking.user === currentUserData.email
       );
+
+      if (userBookings.length === 0) {
+        const bookingList = document.getElementById("bookingList");
+        bookingList.innerHTML = `
+  <div class="empty-booking">
+    <i class="fas fa-calendar-xmark"></i>
+    <h3>No Bookings Yet</h3>
+    <p>
+      Your luxury stays will appear here
+      after booking a room.
+    </p>
+    <a href="#rooms" class="empty-booking-btn">
+      Explore Rooms
+    </a>
+  </div>
+  `;
+        return;
+      }
 
       const totalSpent = userBookings.reduce(
         (sum, booking) => sum + Number(booking.totalPrice),
@@ -746,7 +900,7 @@ document.getElementById("booking-form").scrollIntoView({
         guests: document.getElementById("bookingGuests").value,
         roomType: document.getElementById("bookingRoomType").value,
 
-        location: document.getElementById("locationInput").value,
+        location: document.getElementById("bookingLocation").value,
 
         user: JSON.parse(localStorage.getItem("loggedInUser"))?.email || "guest",
 
@@ -759,184 +913,564 @@ document.getElementById("booking-form").scrollIntoView({
       bookings.push(booking);
 
       localStorage.setItem("bookings", JSON.stringify(bookings));
+      document.getElementById("popupGuest").textContent =
+        booking.name;
 
+      document.getElementById("popupRoom").textContent =
+        booking.roomType;
+
+      document.getElementById("popupLocation").textContent =
+        booking.location;
+
+      document.getElementById("popupGuests").textContent =
+        booking.guests;
+
+      document.getElementById("popupPrice").textContent =
+        "₹" + booking.totalPrice;
       document.getElementById("bookingPopup").classList.add("active");
       this.reset();
     });
   </script>
   <script>
-const reveals = document.querySelectorAll(".reveal");
+    const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", () => {
-  reveals.forEach((section) => {
-    const windowHeight = window.innerHeight;
-    const revealTop = section.getBoundingClientRect().top;
+    window.addEventListener("scroll", () => {
+      reveals.forEach((section) => {
+        const windowHeight = window.innerHeight;
+        const revealTop = section.getBoundingClientRect().top;
 
-    if (revealTop < windowHeight - 100) {
-      section.classList.add("active");
+        if (revealTop < windowHeight - 100) {
+          section.classList.add("active");
+        }
+      });
+    });
+  </script>
+  <script>
+    function closePopup() {
+      document.getElementById("bookingPopup").classList.remove("active");
     }
-  });
-});
-</script>
-<script>
-function closePopup() {
-  document.getElementById("bookingPopup").classList.remove("active");
-}
-</script>
-<script>
-function selectRoom(room) {
-  document.getElementById("bookingRoomType").value = room;
+  </script>
+  <script>
+    function selectRoom(room) {
+      document.getElementById("bookingRoomType").value = room;
 
-  document.getElementById("booking-form").scrollIntoView({
-    behavior: "smooth"
-  });
-}
-</script>
-<div class="booking-popup" id="loginPopup">
-  <div class="popup-content">
+      document.getElementById("booking-form").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  </script>
+  <div class="booking-popup" id="bookingPopup">
 
-    <div class="success-icon">
-      <i class="fas fa-check"></i>
+    <div class="popup-content booking-success-popup">
+
+      <div class="success-icon">
+        <i class="fas fa-check"></i>
+      </div>
+
+      <h2>Booking Confirmed!</h2>
+
+      <p class="popup-subtitle">
+        Your RoyalNest stay has been booked successfully.
+      </p>
+
+      <div class="booking-details">
+
+        <div class="detail-row">
+          <span>Guest</span>
+          <strong id="popupGuest"></strong>
+        </div>
+
+        <div class="detail-row">
+          <span>Room</span>
+          <strong id="popupRoom"></strong>
+        </div>
+
+        <div class="detail-row">
+          <span>Location</span>
+          <strong id="popupLocation"></strong>
+        </div>
+
+        <div class="detail-row">
+          <span>Guests</span>
+          <strong id="popupGuests"></strong>
+        </div>
+
+        <div class="detail-row">
+          <span>Total Price</span>
+          <strong id="popupPrice"></strong>
+        </div>
+
+      </div>
+
+      <button onclick="closePopup()">
+        Continue
+      </button>
+
     </div>
 
-    <h2>Login Successful!</h2>
-
-    <p>Welcome back to RoyalNest Hotel.</p>
-
-    <button onclick="closeLoginPopup()">Continue</button>
-
   </div>
-</div>
-<script>
-window.addEventListener("load", () => {
-
-  setTimeout(() => {
-
-    document
-      .getElementById("loader")
-      .classList.add("hide");
-
-  }, 1800);
-
-});
-</script>
-<script>
-window.addEventListener("scroll", () => {
-
-  const scrollTop =
-    document.documentElement.scrollTop;
-
-  const scrollHeight =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-
-  const progress =
-    (scrollTop / scrollHeight) * 100;
-
-  document.getElementById("progressBar")
-    .style.width = progress + "%";
-
-});
-</script>
-<button id="topBtn" type="button" title="Scroll to top">
-  <i class="fas fa-arrow-up"></i>
-</button>
-<script>
-const topBtn =
-  document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-
-  if (window.scrollY > 400) {
-    topBtn.classList.add("show");
-  } else {
-    topBtn.classList.remove("show");
-  }
-
-});
-
-topBtn.addEventListener("click", () => {
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-});
-</script>
-<script>
-document.querySelectorAll("a").forEach(link => {
-
-  link.addEventListener("click", function(e) {
-
-    const href = this.getAttribute("href");
-
-    if (
-      href &&
-      !href.startsWith("#") &&
-      !this.hasAttribute("target")
-    ) {
-
-      e.preventDefault();
-
-      document.body.classList.add("fade-out");
+  <script>
+    window.addEventListener("load", () => {
 
       setTimeout(() => {
-        window.location.href = href;
-      }, 400);
 
-    }
+        document
+          .getElementById("loader")
+          .classList.add("hide");
 
-  });
+      }, 1800);
 
-});
-</script>
-<script>
-const staggerItems =
-  document.querySelectorAll(".stagger-item");
+    });
+  </script>
+  <script>
+    window.addEventListener("scroll", () => {
 
-const staggerObserver =
-  new IntersectionObserver((entries) => {
+      const scrollTop =
+        document.documentElement.scrollTop;
 
-    entries.forEach(entry => {
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
 
-      if (entry.isIntersecting) {
+      const progress =
+        (scrollTop / scrollHeight) * 100;
 
-        const items =
-          entry.target.parentElement
-          .querySelectorAll(".stagger-item");
+      document.getElementById("progressBar")
+        .style.width = progress + "%";
 
-        items.forEach((item, index) => {
+    });
+  </script>
+  <button id="topBtn" type="button" title="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <script>
+    const topBtn =
+      document.getElementById("topBtn");
 
-          setTimeout(() => {
-            item.classList.add("show");
-          }, index * 180);
+    window.addEventListener("scroll", () => {
 
-        });
-
+      if (window.scrollY > 400) {
+        topBtn.classList.add("show");
+      } else {
+        topBtn.classList.remove("show");
       }
 
     });
 
-  }, {
-    threshold: 0.15
-  });
+    topBtn.addEventListener("click", () => {
 
-staggerItems.forEach(item => {
-  staggerObserver.observe(item);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+  </script>
+  <script>
+    document.querySelectorAll("a").forEach(link => {
+
+      link.addEventListener("click", function (e) {
+
+        const href = this.getAttribute("href");
+
+        if (
+          href &&
+          !href.startsWith("#") &&
+          !this.hasAttribute("target")
+        ) {
+
+          e.preventDefault();
+
+          document.body.classList.add("fade-out");
+
+          setTimeout(() => {
+            window.location.href = href;
+          }, 400);
+
+        }
+
+      });
+
+    });
+  </script>
+  <script>
+    const staggerItems =
+      document.querySelectorAll(".stagger-item");
+
+    const staggerObserver =
+      new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            const items =
+              entry.target.parentElement
+                .querySelectorAll(".stagger-item");
+
+            items.forEach((item, index) => {
+
+              setTimeout(() => {
+                item.classList.add("show");
+              }, index * 180);
+
+            });
+
+          }
+
+        });
+
+      }, {
+        threshold: 0.15
+      });
+
+    staggerItems.forEach(item => {
+      staggerObserver.observe(item);
+    });
+  </script>
+  <script>
+    document.getElementById("contactForm")
+      .addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        alert("Message Sent Successfully!");
+
+        this.reset();
+
+      });
+  </script>
+  <script>
+    const roomInput =
+      document.getElementById("bookingRoomType");
+
+    document.addEventListener("click", (e) => {
+
+      if (!e.target.closest(".custom-select-box")) {
+
+        roomDropdown.style.display = "none";
+
+        bookingLocationDropdown.style.display =
+          "none";
+
+      }
+
+    });
+  </script>
+  <script>function setupCustomSelect(
+      buttonId,
+      optionsId,
+      hiddenInputId
+    ) {
+
+      const btn =
+        document.getElementById(buttonId);
+
+      const options =
+        document.getElementById(optionsId);
+
+      const hiddenInput =
+        document.getElementById(hiddenInputId);
+
+      btn.addEventListener("click", () => {
+
+        options.classList.toggle("active");
+
+      });
+
+      options.querySelectorAll("div")
+        .forEach(item => {
+
+          item.addEventListener("click", () => {
+
+            btn.childNodes[0].textContent =
+              item.dataset.value;
+
+            hiddenInput.value =
+              item.dataset.value;
+
+            options.classList.remove("active");
+
+          });
+
+        });
+
+      document.addEventListener("click", (e) => {
+
+        if (
+          !btn.contains(e.target) &&
+          !options.contains(e.target)
+        ) {
+          options.classList.remove("active");
+        }
+
+      });
+
+    }
+
+    setupCustomSelect(
+      "roomSelectBtn",
+      "roomOptions",
+      "bookingRoomType"
+    );
+
+    setupCustomSelect(
+      "locationSelectBtn",
+      "locationOptions",
+      "bookingLocation"
+    );
+  </script>
+  <script>
+
+    const sections =
+      document.querySelectorAll("section");
+
+    const navLinks =
+      document.querySelectorAll("#nav-links a");
+
+    window.addEventListener("scroll", () => {
+
+      let current = "";
+
+      sections.forEach(section => {
+
+        const sectionTop =
+          section.offsetTop - 180;
+
+        const sectionHeight =
+          section.clientHeight;
+
+        if (
+          pageYOffset >= sectionTop
+          &&
+          pageYOffset <
+          sectionTop + sectionHeight
+        ) {
+          current = section.getAttribute("id");
+        }
+
+      });
+
+      navLinks.forEach(link => {
+
+        link.classList.remove("active-nav");
+
+        if (
+          link.getAttribute("href")
+          ===
+          `#${current}`
+        ) {
+
+          link.classList.add("active-nav");
+
+        }
+
+      });
+
+    });
+
+  </script>
+  <div id="toastBox"></div>
+  <!-- Room Details Modal -->
+
+  <div class="room-modal" id="roomModal">
+
+    <div class="modal-content">
+
+      <span class="close-modal" id="closeModal">&times;</span>
+
+      <img id="modalImage" src="" alt="Room Image">
+
+      <h2 id="modalTitle"></h2>
+
+      <p id="modalDesc"></p>
+
+      <div class="modal-features">
+
+        <div>🛏 King Bed</div>
+        <div>📶 Free Wifi</div>
+        <div>❄ AC</div>
+        <div>🍽 Breakfast</div>
+
+      </div>
+
+      <div class="modal-info">
+
+        <span id="modalPrice"></span>
+
+        <span>⭐ 4.9 Rating</span>
+
+      </div>
+
+      <button class="modal-book-btn">
+        Book This Room
+      </button>
+
+    </div>
+
+  </div>
+  <script>
+    const roomModal =
+      document.getElementById("roomModal");
+
+    function openRoomModal(
+      title,
+      desc,
+      price,
+      image
+    ) {
+
+      document.getElementById(
+        "modalTitle"
+      ).innerText = title;
+
+      document.getElementById(
+        "modalDesc"
+      ).innerText = desc;
+
+      document.getElementById(
+        "modalPrice"
+      ).innerText = price;
+
+      document.getElementById(
+        "modalImage"
+      ).src = image;
+
+      roomModal.classList.add("active");
+    }
+
+    document
+      .getElementById("closeModal")
+      .addEventListener("click", () => {
+
+        roomModal.classList.remove("active");
+
+      });
+
+    window.addEventListener("click", (e) => {
+
+      if (e.target === roomModal) {
+
+        roomModal.classList.remove("active");
+
+      }
+
+    });
+    const counters =
+document.querySelectorAll(".counter");
+
+const speed = 200;
+
+counters.forEach(counter => {
+
+  const animate = () => {
+
+    const target =
+      +counter.getAttribute("data-target");
+
+    const count =
+      +counter.innerText;
+
+    const increment =
+      target / speed;
+
+    if(count < target){
+
+      counter.innerText =
+        Math.ceil(count + increment);
+
+      setTimeout(animate,15);
+
+    }else{
+
+      if(target >= 1000){
+
+        counter.innerText = "15K+";
+
+      }else if(target === 5){
+
+        counter.innerText = "5★";
+
+      }else{
+
+        counter.innerText =
+          target + "+";
+
+      }
+
+    }
+
+  };
+
+  animate();
+
 });
-</script>
+window.addEventListener(
+"load",()=>{
+
+  const loader =
+    document.getElementById(
+      "loader"
+    );
+
+  setTimeout(()=>{
+
+    loader.style.opacity = "0";
+
+    loader.style.visibility =
+      "hidden";
+
+  },1800);
+
+});
+const swiper =
+new Swiper(".luxurySwiper",{
+
+  loop:true,
+
+  grabCursor:true,
+
+  centeredSlides:true,
+
+  autoplay:{
+    delay:3000,
+    disableOnInteraction:false,
+  },
+
+  pagination:{
+    el:".swiper-pagination",
+    clickable:true,
+  },
+
+  navigation:{
+    nextEl:".swiper-button-next",
+    prevEl:".swiper-button-prev",
+  },
+
+});
+  </script>
+  <a
+href="#booking-form"
+class="floating-book-btn"
+>
+
+📅 Book Now
+
+</a>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-document.getElementById("contactForm")
-.addEventListener("submit", function(e){
 
-  e.preventDefault();
+AOS.init({
 
-  alert("Message Sent Successfully!");
+  duration:1200,
 
-  this.reset();
+  once:true,
+
+  offset:120,
 
 });
+
 </script>
 </body>
 

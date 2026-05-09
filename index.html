@@ -20,6 +20,11 @@
       <button type="submit">Login</button>
     </form>
     <p id="loginMessage"></p>
+    <p>
+  <a href="#" class="forgot-link" onclick="openForgotPopup()">
+    Forgot Password?
+  </a>
+</p>
     <p>Don't have an account? <a href="register.html" class="register-link">Register</a></p>
   </div>
 
@@ -45,11 +50,40 @@ function closeLoginPopup() {
   window.location.href = "hotel.html";
 }
 </script>
-<script>
-function closeLoginPopup() {
-  window.location.href = "hotel.html";
-}
-</script>
+<div class="booking-popup" id="forgotPopup">
+
+  <div class="popup-content">
+    <span class="close-popup"
+onclick="closeForgotPopup()">
+  &times;
+</span>
+
+    <div class="success-icon">
+      <i class="fas fa-lock"></i>
+    </div>
+
+    <h2>Reset Password</h2>
+
+    <input
+      type="email"
+      id="forgotEmail"
+      placeholder="Enter Registered Email"
+    >
+
+    <input
+      type="password"
+      id="newPassword"
+      placeholder="Enter New Password"
+    >
+
+    <button onclick="resetPassword()">
+      Update Password
+    </button>
+
+  </div>
+
+</div>
+<div id="toastBox"></div>
 </body>
 
 </html>
