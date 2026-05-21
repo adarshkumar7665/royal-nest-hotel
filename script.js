@@ -240,9 +240,13 @@ if(menuToggle && closeMenu && navLinks){
     "click",
     ()=>{
 
-      navLinks.classList.add("active");
+      navLinks.classList.add(
+        "active"
+      );
 
-      closeMenu.classList.add("show");
+      closeMenu.classList.add(
+        "show"
+      );
 
       document.body.classList.add(
         "menu-open"
@@ -255,9 +259,13 @@ if(menuToggle && closeMenu && navLinks){
     "click",
     ()=>{
 
-      navLinks.classList.remove("active");
+      navLinks.classList.remove(
+        "active"
+      );
 
-      closeMenu.classList.remove("show");
+      closeMenu.classList.remove(
+        "show"
+      );
 
       document.body.classList.remove(
         "menu-open"
