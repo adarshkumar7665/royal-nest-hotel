@@ -1,5 +1,5 @@
 body {
-   background: linear-gradient(rgba(0, 0, 0, 0.349), rgba(0, 0, 0, 0.368)), url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c)no-repeat center center/cover;
+   background: linear-gradient(rgba(0, 0, 0, 0.349), rgba(0, 0, 0, 0.368)), url("../../images/hero/hero-bg.jpg")no-repeat center center/cover;
   /* background: linear-gradient(135deg, #1c1c1c, #2c2c2c); */
   color: #fff;
   font-family: "Poppins", sans-serif;

@@ -10,7 +10,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Royal Nest Hotel</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap"
@@ -79,7 +79,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero reveal">
     <div class="hero-content">
       <h2>
 
@@ -100,24 +100,51 @@ Luxury Stays & Premium Comfort
           <input type="text" id="locationInput" placeholder="Location" required>
           <div class="location-dropdown" id="locationDropdown">
             <input type="text" id="locationSearch" placeholder="Search...">
-            <div>Bhagalpur</div>
-            <div>Patna</div>
-            <div>Delhi</div>
-            <div>Mumbai</div>
-            <div>Kolkata</div>
+           <div>Patna</div>
+<div>Delhi</div>
+<div>Mumbai</div>
+<div>Kolkata</div>
+<div>Bangalore</div>
+<div>Chennai</div>
+<div>Hyderabad</div>
+<div>Pune</div>
+<div>Lucknow</div>
+<div>Jaipur</div>
+<div>Ahmedabad</div>
+<div>Surat</div>
+<div>Bhopal</div>
+<div>Ranchi</div>
+<div>Varanasi</div>
+<div>Bhagalpur</div>
+<div>Katihar</div>
+<div>Purnea</div>
+<div>Noida</div>
+<div>Gurgaon</div>
+<div>Goa</div>
+<div>Shimla</div>
+<div>Darjeeling</div>
+<div>Manali</div>
           </div>
         </div>
+        
 
         <button type="button" id="searchBtn">Search Rooms</button>
-
       </div>
+      <div class="hero-buttons">
+
+  <a href="#rooms" class="hero-btn primary-btn">
+    Explore Rooms
+  </a>
+
+  <a href="#contact" class="hero-btn secondary-btn">
+    Contact Us
+  </a>
+  </div>
 
     </div>
   </section>
-  <section
-class="real-booking"
-id="booking-form"
->
+ <section class="real-booking reveal"
+id="real-booking">
     <h2>Book Your Stay</h2>
     <form id="bookingForm">
 
@@ -191,103 +218,241 @@ id="booking-form"
             <span>▼</span>
           </div>
 
-          <div class="select-options" id="locationOptions">
+         <div class="select-options" id="locationOptions">
 
-            <div data-value="Bhagalpur">Bhagalpur</div>
+<input type="text"
+id="bookingLocationSearch"
+placeholder="Search city...">
 
-            <div data-value="Patna">Patna</div>
+<div data-value="Patna">Patna</div>
+<div data-value="Delhi">Delhi</div>
+<div data-value="Mumbai">Mumbai</div>
+<div data-value="Kolkata">Kolkata</div>
+<div data-value="Bangalore">Bangalore</div>
+<div data-value="Chennai">Chennai</div>
+<div data-value="Hyderabad">Hyderabad</div>
+<div data-value="Pune">Pune</div>
+<div data-value="Lucknow">Lucknow</div>
+<div data-value="Jaipur">Jaipur</div>
+<div data-value="Ahmedabad">Ahmedabad</div>
+<div data-value="Surat">Surat</div>
+<div data-value="Bhopal">Bhopal</div>
+<div data-value="Ranchi">Ranchi</div>
+<div data-value="Varanasi">Varanasi</div>
+<div data-value="Bhagalpur">Bhagalpur</div>
+<div data-value="Katihar">Katihar</div>
+<div data-value="Purnea">Purnea</div>
+<div data-value="Noida">Noida</div>
+<div data-value="Gurgaon">Gurgaon</div>
+<div data-value="Goa">Goa</div>
+<div data-value="Shimla">Shimla</div>
+<div data-value="Darjeeling">Darjeeling</div>
+<div data-value="Manali">Manali</div>
 
-            <div data-value="Delhi">Delhi</div>
-
-            <div data-value="Mumbai">Mumbai</div>
-
-            <div data-value="Kolkata">Kolkata</div>
-
-          </div>
+</div>
 
           <input type="hidden" id="bookingLocation">
 
         </div>
       </div>
-
-
       <button type="submit">Confirm Booking</button>
 
     </form>
   </section>
-  <section class="user-profile">
-    <h2>User Profile</h2>
-    <div class="profile-card">
-      <p><strong>Name:</strong> <span id="profileName"></span></p>
-      <p><strong>Email:</strong> <span id="profileEmail"></span></p>
-      <p><strong>Total Bookings:</strong> <span id="profileBookings"></span></p>
-      <p><strong>Total Spent:</strong> ₹<span id="profileSpent"></span></p>
-    </div>
-  </section>
   <!-- Rooms Containar -->
 
-  <section class="rooms" id="rooms">
-    <h2><strong><i>Popular Rooms</i></strong> </h2>
-    <div class="room-cards">
-      <div class="room" data-location="Patna" data-room="Standard Room">
-        <img
-          src="https://th.bing.com/th/id/R.7949918e964ecf7fb2a92ffec04c113d?rik=WKUEfx3mT9k3BQ&riu=http%3a%2f%2fcache.marriott.com%2fmarriottassets%2fmarriott%2fLASJW%2flasjw-suite-0084-hor-clsc.jpg%3finterpolation%3dprogressive-bilinear%26&ehk=oDRvnHGdTO5SUJmvUoxsmYCSFG%2beW%2fXXnw35tcAIjRw%3d&risl=&pid=ImgRaw&r=0"
-          alt="hotel image">
-        <div class="room-price">₹1500/night</div>
-        <h3>Standard Room</h3>
-        <p>Comfortable stay with premium essentials.</p>
-        <button class="room-btn" onclick="openRoomModal(
-'Standard Room',
-'Comfortable stay with premium essentials.',
-'₹1500/night',
-'https://th.bing.com/th/id/R.7949918e964ecf7fb2a92ffec04c113d?rik=WKUEfx3mT9k3BQ&riu=http%3a%2f%2fcache.marriott.com%2fmarriottassets%2fmarriott%2fLASJW%2flasjw-suite-0084-hor-clsc.jpg%3finterpolation%3dprogressive-bilinear%26&ehk=oDRvnHGdTO5SUJmvUoxsmYCSFG%2beW%2fXXnw35tcAIjRw%3d&risl=&pid=ImgRaw&r=0'
-)">
-          View Details
-          
-        </button>
-      </div>
-      <div class="room" data-location="Delhi" data-room="Deluxe Room">
-        <img
-          src="https://photos.mandarinoriental.com/is/image/MandarinOriental/dmo-The-worlds-most-romantic-hotel-suites-dubai-royal-penthouse-bedroom"
-          alt="hotel image">
-        <h3>Deluxe Room</h3>
-        <p>Comfortable stay with premium amenities.</p>
-        <div class="room-price">₹2500/night</div>
-        <button class="room-btn" onclick="openRoomModal(
-'Deluxe Room',
-'Comfortable stay with premium amenities.',
-'₹2500/night',
-'https://photos.mandarinoriental.com/is/image/MandarinOriental/dmo-The-worlds-most-romantic-hotel-suites-dubai-royal-penthouse-bedroom'
-)">
-          View Details
-        </button>
-      </div>
-      <div class="room " data-location="Mumbai" data-room="Luxury Suite">
-        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1200&auto=format&fit=crop"
-          alt="hotel image">
-        <div class="room-price">₹5000/night</div>
-        <h3>Luxury Suite</h3>
-        <p>Ultimate elegance with world-class experience.</p>
-        <button class="room-btn" onclick="openRoomModal(
-'Luxury Suite',
-'Ultimate elegance with world-class experience.',
-'₹5000/night',
-'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1200&auto=format&fit=crop'
-)">
+<section class="rooms reveal" id="rooms">
 
-          View Details
+  <h2><strong><i>Popular Rooms</i></strong></h2>
 
-        </button>
+  <div class="room-cards">
+
+    <!-- STANDARD ROOM -->
+
+    <div class="room"
+      data-location="Patna"
+      data-room="Standard Room">
+
+      <div class="wishlist-btn"
+        data-room="Standard Room">
+        ♥
       </div>
+
+      <div class="availability available">
+        Available
+      </div>
+
+      <img src="images/rooms/Standard-room.jpg"
+      alt="Standard Room"
+      loading="lazy">
+
+      <div class="room-price">
+        ₹1500/night
+      </div>
+
+      <h3>Standard Room</h3>
+
+      <p>
+        Comfortable stay with premium essentials.
+      </p>
+
+      <button class="room-btn"
+        onclick="openRoomModal(
+        'Standard Room',
+        'Comfortable stay with premium essentials.',
+        '₹1500/night',
+        'images/rooms/Standard-room.jpg'
+      )">
+
+        View Details
+
+      </button>
+
     </div>
-  </section>
+
+    <!-- DELUXE ROOM -->
+
+    <div class="room"
+      data-location="Delhi"
+      data-room="Deluxe Room">
+
+      <div class="wishlist-btn"
+        data-room="Deluxe Room">
+        ♥
+      </div>
+
+      <div class="availability available">
+        Available
+      </div>
+
+      <img
+        src="images/rooms/deluxe-room.jpg"
+        alt="hotel image"
+        loading="lazy">
+
+      <div class="room-price">
+        ₹2500/night
+      </div>
+
+      <h3>Deluxe Room</h3>
+
+      <p>
+        Comfortable stay with premium amenities.
+      </p>
+
+      <button class="room-btn"
+        onclick="openRoomModal(
+        'Deluxe Room',
+        'Comfortable stay with premium amenities.',
+        '₹2500/night',
+        'images/rooms/deluxe-room.jpg'
+      )">
+
+        View Details
+
+      </button>
+
+    </div>
+
+    <!-- LUXURY SUITE -->
+
+    <div class="room"
+      data-location="Mumbai"
+      data-room="Luxury Suite">
+
+      <div class="wishlist-btn"
+        data-room="Luxury Suite">
+        ♥
+      </div>
+
+      <div class="availability available">
+        Available
+      </div>
+
+      <img
+        src="images/rooms/luxury-suite.avif"
+        alt="Luxury Suite"
+        loading="lazy"
+        >
+
+      <div class="room-price">
+        ₹5000/night
+      </div>
+
+      <h3>Luxury Suite</h3>
+
+      <p>
+        Ultimate elegance with world-class experience.
+      </p>
+
+      <button class="room-btn"
+        onclick="openRoomModal(
+        'Luxury Suite',
+        'Ultimate elegance with world-class experience.',
+        '₹5000/night',
+        'images/rooms/luxury-suite.avif'
+      )">
+
+        View Details
+
+      </button>
+
+    </div>
+
+    <!-- EXECUTIVE ROOM -->
+
+    <div class="room"
+      data-location="Kolkata"
+      data-room="Executive Room">
+
+      <div class="wishlist-btn"
+        data-room="Executive Room">
+        ♥
+      </div>
+
+      <div class="availability available">
+        Available
+      </div>
+
+      <img
+        src="images/rooms/Executive-room.avif"
+        alt="Executive Room"
+        loading="lazy">
+
+      <div class="room-price">
+        ₹3500/night
+      </div>
+
+      <h3>Executive Room</h3>
+
+      <p>
+        Modern luxury room with premium comfort and city view.
+      </p>
+
+      <button class="room-btn"
+        onclick="openRoomModal(
+        'Executive Room',
+        'Modern luxury room with premium comfort and city view.',
+        '₹3500/night',
+        'images/rooms/Executive-room.avif'
+      )">
+
+        View Details
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 
 
 
   <!-- Facilities -->
-  <section class="facilities" id="facilities">
+  <section class="facilities reveal" id="facilities">
 
     <h2><strong><i>FACILITIES</i></strong></h2>
     <div class="facilitie-cards">
@@ -296,7 +461,7 @@ id="booking-form"
 class="facilitie"
 
 >
-        <img src="https://th.bing.com/th/id/OIP.Eh_cXnqgXGe45cJLq0iaxAHaGm?r=0&o=7rm=3&rs=1&pid=ImgDetMain"
+        <img src="images/rooms/Conference-room.jpg"
           alt="conference" />
         <div class="facility-overlay">
           <h3>Conference Room</h3>
@@ -308,7 +473,7 @@ class="facilitie"
 class="facilitie"
 
 >
-        <img src="https://th.bing.com/th/id/OIP.rI56h96boMyYF7mGiF9vkAHaFj?r=0&rs=1&pid=ImgDetMain" alt="restaurant" />
+        <img src="images/rooms/Resturant.jpg" alt="restaurant" />
         <div class="facility-overlay">
           <h3>Restaurant</h3>
           <p>Luxury dining experience with world-class cuisine.</p>
@@ -319,7 +484,7 @@ class="facilitie"
 class="facilitie"
 
 >
-        <img src="https://5.imimg.com/data5/AV/GB/QQ/SELLER-13597443/kids-play-zone-entertainment-service-500x500.png"
+        <img src="images/rooms/Playing-area.webp"
           alt="kids" />
         <div class="facility-overlay">
           <h3>Kids Play Area</h3>
@@ -332,7 +497,7 @@ class="facilitie"
 
 >
         <img
-          src="https://thumbs.dreamstime.com/z/beautiful-luxury-wedding-hall-delhi-india-beautiful-wedding-hall-photo-taken-me-delhi-india-111771013.jpg?w=400"
+          src="images/rooms/Wedding-hall.webp"
           alt="wedding" />
         <div class="facility-overlay">
           <h3>Wedding Hall</h3>
@@ -347,7 +512,7 @@ class="facilitie"
 
   <!-- Feedback section -->
 
-  <section class="testimonials" id="testimonials">
+  <section class="testimonials reveal" id="testimonials">
 
     <h2><strong><i>What Our Guests Say</i></strong></h2>
 
@@ -410,7 +575,7 @@ class="testimonial"
 
   <!-- Gallery section -->
   <section
-class="gallery"
+class="gallery reveal"
 id="gallery"
 >
 
@@ -425,7 +590,7 @@ id="gallery"
     <div class="swiper-slide">
 
       <img
-      src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop"
+      src="images/rooms/luxury-suite.avif"
       alt="Luxury Room">
 
     </div>
@@ -433,15 +598,15 @@ id="gallery"
     <div class="swiper-slide">
 
       <img
-      src="https://5.imimg.com/data5/AV/GB/QQ/SELLER-13597443/kids-play-zone-entertainment-service-500x500.png"
+      src="images/rooms/deluxe-room.jpg"
       alt="Pool">
 
     </div>
-
+ 
     <div class="swiper-slide">
 
       <img
-      src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop"
+      src="images/rooms/hotel-about.avif"
       alt="Lobby">
 
     </div>
@@ -449,7 +614,7 @@ id="gallery"
     <div class="swiper-slide">
 
       <img
-      src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop"
+      src="images/rooms/Resturant.jpg"
       alt="Restaurant">
 
     </div>
@@ -466,13 +631,13 @@ id="gallery"
 
   </section>
   <!-- My Booking -->
-  <section class="my-bookings">
+  <section class="my-bookings reveal">
     <h2>My Bookings</h2>
     <div id="bookingList"></div>
   </section>
 
   <!-- Contact Section -->
-  <section class="contact " id="contact">
+  <section class="contact reveal" id="contact">
 
     <h2>Contact Us</h2>
 
@@ -499,11 +664,23 @@ id="gallery"
 
       <form id="contactForm">
 
-        <input type="text" placeholder="Your Name" required>
+        <input
+type="text"
+id="contactName"
+placeholder="Your Name"
+required>
 
-        <input type="email" placeholder="Your Email" required>
+        <input
+type="email"
+id="contactEmail"
+placeholder="Your Email"
+required>
 
-        <textarea placeholder="Your Message" rows="5" required></textarea>
+       <textarea
+id="contactMessage"
+placeholder="Your Message"
+required>
+</textarea>
 
         <button type="submit">Send Message</button>
 
@@ -517,13 +694,14 @@ id="gallery"
 
 
   <!-- About -->
-  <section class="about" id="about">
+  <section class="about reveal" id="about">
 
     <div class="about-container">
 
       <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?q=80&w=1200&auto=format&fit=crop"
-          alt="Hotel">
+        <img src="images/rooms/hotel-about.avif"
+          alt="Hotel"
+          loading="lazy">
       </div>
 
       <div
@@ -543,25 +721,17 @@ class="about-content"
         </p>
 
         <div class="about-stats">
-
+     <div class="stat-box">
+    <h3 class="counter" data-target="5000">0</h3>
+            <span>Happy Guests</span>
+          </div>
           <div class="stat-box">
-            <h3 class="counter" data-target="250">
-  0
-</h3>
+            <h3 class="counter" data-target="120">0</h3>
             <span>Luxury Rooms</span>
           </div>
 
           <div class="stat-box">
-            <h3 class="counter" data-target="15000">
-  0
-</h3>
-            <span>Happy Guests</span>
-          </div>
-
-          <div class="stat-box">
-            <h3 class="counter" data-target="5">
-  0
-</h3>
+   <h3 class="counter" data-target="15">0</h3>
             <span>Premium Service</span>
           </div>
 
@@ -578,7 +748,7 @@ class="about-content"
   <!-- admin-dashboard -->
 
 
-  <section class="admin-dashboard">
+  <section class="admin-dashboard reveal">
     <h2>Admin Dashboard</h2>
     <div class="admin-stats">
       <div class="stat-card">
@@ -685,6 +855,20 @@ class="about-content"
     <p>
       <strong>Total:</strong>
       ₹<span id="invoicePrice"></span>
+      <p>
+  <strong>Total Nights:</strong>
+  <span id="invoiceNights"></span>
+</p>
+
+<p>
+  <strong>GST:</strong>
+  ₹<span id="invoiceGST"></span>
+</p>
+
+<p>
+  <strong>Grand Total:</strong>
+  ₹<span id="invoiceTotal"></span>
+</p>
     </p>
 
   </div>
@@ -710,7 +894,10 @@ class="about-content"
 
     <div class="modal-content">
 
-      <span class="close-modal" id="closeModal">&times;</span>
+      <div class="close-modal"
+onclick="closeRoomModal()">
+  ×
+</div>
 
       <img id="modalImage" src="" alt="Room Image">
 
@@ -735,9 +922,13 @@ class="about-content"
 
       </div>
 
-      <button class="modal-book-btn">
-        Book This Room
-      </button>
+<button
+class="modal-book-btn"
+onclick="bookSelectedRoom()">
+
+  Book This Room
+
+</button>
 
     </div>
 
@@ -756,7 +947,7 @@ class="about-content"
   >
 
 </div>
-<script src="script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 
 </html>
