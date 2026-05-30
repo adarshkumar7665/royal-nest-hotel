@@ -19,28 +19,46 @@ html,
 body{
   overflow-x:hidden;
 }
+header{
 
-header {
-  background: rgba(8, 18, 32, 0.78);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+
+  z-index:1000;
+
+  padding:18px 0;
+
+  background:
+    rgba(5,15,28,0.58);
+
+  -webkit-backdrop-filter:blur(16px);
+
+  backdrop-filter:blur(16px);
+
+  border-bottom:
+    1px solid rgba(212,175,55,0.08);
+
+  transition:all 0.35s ease;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.16);
 }
 
 .container{
-  max-width:1200px;
+
+  width:90%;
+
   margin:auto;
-  padding:0 25px;
 
   display:flex;
-  justify-content:space-between;
-  align-items:center;
 
-  height:90px;
+  justify-content:space-between;
+
+  align-items:center;
 }
 
 nav{
@@ -84,25 +102,25 @@ nav ul{
 
   list-style:none;
 }
-nav ul li a:hover {
+nav ul li a:hover{
 
-  color: #fff;
+  color:#d4af37;
 }
+nav ul li a{
 
-nav ul li a {
-  color: #d4af37;
+  color:#f5f5f5;
 
-  text-decoration: none;
+  text-decoration:none;
 
-  font-weight: 600;
+  font-size:0.96rem;
 
-  position: relative;
+  font-weight:600;
 
-  transition: all 0.35s ease;
+  letter-spacing:0.6px;
 
-  padding: 6px 0;
+  transition:0.3s ease;
 
-  letter-spacing: 0.5px;
+  position:relative;
 }
 
 nav ul li a::after {
@@ -426,18 +444,33 @@ nav ul li a:hover::after {
     filter 0.5s ease;
 }
 
-.room h3 {
-  margin: 10px 0 5px;
-}
+.room h3{
 
-.room p {
-  margin-bottom: 15px;
+  margin-top:22px;
+
+  margin-bottom:10px;
+
+  font-size:1.7rem;
+
+  color:#1b263b;
+}
+.room p{
+
+  padding:0 24px;
+
+  color:#666;
+
+  line-height:1.8;
+
+  font-size:0.96rem;
+
+  min-height:70px;
 }
 /* ===== PREMIUM ROOM CARD ===== */
 
 .room{
   position:relative;
-
+padding-bottom:8px;
   overflow:hidden;
 }
 
@@ -538,7 +571,40 @@ nav ul li a:hover::after {
 /* BUTTON */
 
 .room-btn{
+
+  display:inline-block;
+
+  margin-top:18px;
+
+  margin-bottom:22px;
+
+  padding:13px 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c89b2b,
+      #e7c65c
+    );
+
+  color:#111;
+
+  border:none;
+
+  border-radius:50px;
+
+  font-size:0.95rem;
+
+  font-weight:700;
+
+  letter-spacing:0.3px;
+
+  cursor:pointer;
+
   transition:0.35s ease;
+
+  box-shadow:
+    0 8px 20px rgba(212,175,55,0.22);
 }
 
 .room-btn:hover{
@@ -1123,38 +1189,42 @@ footer::before {
 }
 .room-price {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: linear-gradient(135deg, #d4af37, #f0c908);
-  color: #0d1b2a;
-  padding: 8px 14px;
+  top: 18px;
+  right: 18px;
+  background: linear-gradient(135deg, #d4af37, #f3d35c);
+  color: #111;
+  padding: 10px 18px;
   border-radius: 50px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.4);
 }
 
 .room-btn {
-  display: inline-block;
-  margin: 15px 0 20px;
-  padding: 10px 22px;
-  background: linear-gradient(135deg, #d4af37, #f0c908);
-  color: #0d1b2a;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: bold;
-  transition: all 0.35s ease;
-  letter-spacing: 0.5px;
-  position:relative;
+  
+  padding: 13px 26px;
+  background: linear-gradient(135deg, #c89b2b, #e7c65c);
+  color: #111;
+  border: none;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight:700;
+  transition: 0.35s ease;
+  cursor: pointer;
+box-shadow: 0 8px 20px rgba(212,175,55,0.22);
 
-overflow:hidden;
 }
 .room-btn:hover {
 
   transform: translateY(-2px);
 
   box-shadow:
-    0 8px 18px rgba(212,175,55,0.22);
+    0 14px 28px rgba(212,175,55,0.3);
+    background: linear-gradient(135deg, #e0b53f,#f5d97a);
 }
 .room p {
   padding: 0 20px;
@@ -1185,6 +1255,13 @@ overflow:hidden;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+  display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:8px;
 }
 
 #authBtn:hover {
@@ -1200,16 +1277,36 @@ overflow:hidden;
 }
 
 
-#authBtn.logout {
-  background-color: #12273d;
-  box-shadow: 0 0 10px rgb(53 88 125);
+#authBtn.logout{
+
+  background:
+    rgba(212,175,55,0.12);
+
+  color:#f5f5f5;
+
+  border:
+    1px solid rgba(212,175,55,0.35);
+
+  padding:10px 22px;
+
+  border-radius:50px;
+
+  font-weight:600;
+
+  transition:0.35s ease;
+
+  -webkit-backdrop-filter:blur(10px);
+
+  backdrop-filter:blur(10px);
 }
 
-#authBtn.logout:hover {
-  background: linear-gradient(135deg, #d4af37, #f0c908);
+#authBtn.logout:hover{
 
-  box-shadow: 0 5px 15px rgba(255, 85, 85, 0.6);
-  color: #0d1b2a;
+  background:#d4af37;
+
+  color:#08111f;
+
+  transform:translateY(-2px);
 }
 
 
@@ -2945,7 +3042,47 @@ body.loaded {
 
   position:relative;
 }
+.loader-logo-circle{
 
+  width:140px;
+  height:140px;
+
+  margin:0 auto 25px;
+
+  border-radius:50%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    2px solid rgba(212,175,55,0.22);
+
+    box-shadow:
+    0 0 25px rgba(212,175,55,0.25),
+    0 0 60px rgba(212,175,55,0.15);
+
+
+  overflow:hidden;
+
+  animation:
+    loaderGlow 3s infinite ease-in-out;
+}
+.loader-logo-circle img{
+
+  width:90%;
+  height:100%;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  animation:
+    logoFloat 3s ease-in-out infinite;
+}
 .luxury-ring{
 
   width:110px;
@@ -2964,7 +3101,44 @@ body.loaded {
   animation:
     ringRotate 1.5s linear infinite;
 }
+.loader-logo{
+  letter-spacing: 1px;
+}
+.loader-text{
+  opacity: 0.85;
+}
+@keyframes loaderGlow{
 
+  0%{
+    box-shadow:
+      0 0 18px rgba(212,175,55,0.15);
+  }
+
+  50%{
+    box-shadow:
+      0 0 38px rgba(212,175,55,0.35);
+  }
+
+  100%{
+    box-shadow:
+      0 0 18px rgba(212,175,55,0.15);
+  }
+}
+
+@keyframes logoFloat{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.04);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+}
 @keyframes ringRotate{
 
   100%{
@@ -3250,16 +3424,16 @@ border-radius:12px;
 
   position:absolute;
 
-  top:60px;
-  right:15px;
+  top:72px;
+  right:18px;
 
-  padding:8px 14px;
+  padding:8px 16px;
 
   border-radius:50px;
 
   font-size:0.82rem;
 
-  font-weight:700;
+  font-weight:600;
 
   letter-spacing:0.5px;
 
